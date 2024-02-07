@@ -1,6 +1,8 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:my_resume/app/presentation/view/cv_view.dart';
 import 'package:my_resume/core/di/locator.dart' as di;
+import 'package:my_resume/core/theme/app_theme_data.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,13 +15,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const CVView(),
-    );
+    return AdaptiveTheme(
+        light: di.sl<AppLightThemeData>().materialThemeData,
+        dark: di.sl<AppDarkThemeData>().materialThemeData,
+        initial: AdaptiveThemeMode.system,
+        builder: (light, dark) {
+          return MaterialApp(
+            title: 'Flutter Demo',
+            theme: light,
+            darkTheme: dark,
+            home: const CVView(),
+          );
+        });
   }
 }

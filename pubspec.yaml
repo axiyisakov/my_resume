@@ -30,6 +30,7 @@ dependencies:
   welltested_annotation: any
   gap: ^3.0.1
   badges: ^3.1.2
+  adaptive_theme: any
 
 dev_dependencies:
   flutter_test:

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 import 'package:my_resume/core/theme/colors.dart';
 import 'package:my_resume/core/theme/spacing.dart';
 
@@ -63,6 +64,7 @@ extension on Color {
       );
 }
 
+@lazySingleton
 class AppLightThemeData extends AppThemeData {
   @override
   ThemeData get materialThemeData => ThemeData(
@@ -142,6 +144,7 @@ class AppLightThemeData extends AppThemeData {
   Color get accentGreen => AppColors.accentGreen;
 }
 
+@lazySingleton
 class AppDarkThemeData extends AppThemeData {
   @override
   ThemeData get materialThemeData => ThemeData(
