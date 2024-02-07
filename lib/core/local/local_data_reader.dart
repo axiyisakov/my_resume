@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:my_resume/core/exception/failures.dart';
+import 'package:welltested_annotation/welltested_annotation.dart';
 
+@Welltested()
 @lazySingleton
 class LocalDataReader {
   Future<Either<Failures, String>> readData(String path) async {

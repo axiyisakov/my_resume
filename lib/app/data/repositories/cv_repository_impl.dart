@@ -6,7 +6,9 @@ import 'package:my_resume/app/data/models/portfolio.dart';
 import 'package:my_resume/app/domain/repositories/cv_repository.dart';
 import 'package:my_resume/core/exception/exceptions.dart';
 import 'package:my_resume/core/exception/failures.dart';
+import 'package:welltested_annotation/welltested_annotation.dart';
 
+@Welltested()
 @LazySingleton(as: CVRepository)
 class CVRespositoryImpl implements CVRepository {
   final LocalDataSource _localDataSource;

@@ -15,6 +15,8 @@ class DefaultText extends StatelessWidget {
     return AutoSizeText(
       text,
       style: style,
+      maxLines: null,
+      overflow: TextOverflow.visible,
     );
   }
 }

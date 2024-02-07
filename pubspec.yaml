@@ -27,6 +27,9 @@ dependencies:
   auto_size_text: any
   google_fonts: any
   getwidget: any
+  welltested_annotation: any
+  gap: ^3.0.1
+  badges: ^3.1.2
 
 dev_dependencies:
   flutter_test:
@@ -38,6 +41,7 @@ dev_dependencies:
   injectable_generator: any
   json_serializable: any
   freezed: any
+  mockito: any
   
 
 flutter:

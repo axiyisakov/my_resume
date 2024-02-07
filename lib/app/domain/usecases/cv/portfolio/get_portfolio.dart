@@ -5,7 +5,9 @@ import 'package:my_resume/app/data/models/portfolio.dart';
 import 'package:my_resume/app/domain/repositories/cv_repository.dart';
 import 'package:my_resume/core/exception/failures.dart';
 import 'package:my_resume/core/usecases/portfolio_usecase.dart';
+import 'package:welltested_annotation/welltested_annotation.dart';
 
+@Welltested()
 @lazySingleton
 class GetPortfolio implements PortfolioUseCase<Portfolio, NoParams> {
   final CVRepository repository;

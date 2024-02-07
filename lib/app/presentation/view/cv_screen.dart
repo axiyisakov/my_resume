@@ -11,29 +11,40 @@ class CVScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('My Resume'),
+      appBar: AppBar(
+        leading: CupertinoSwitch(value: true, onChanged: (value) {}),
+        title: const Text('My Resume'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              CupertinoIcons.arrow_down,
+            ),
+          )
+        ],
+      ),
+      body: CupertinoTabScaffold(
+        tabBuilder: (context, index) => CupertinoTabView(
+          builder: (context) {
+            return Consumer<CVProvider>(
+              builder: (context, value, child) => CVPages.pages[index],
+            );
+          },
         ),
-        body: CupertinoTabScaffold(
-          tabBuilder: (context, index) => CupertinoTabView(
-            builder: (context) {
-              return Consumer<CVProvider>(
-                builder: (context, value, child) => CVPages.pages[index],
-              );
-            },
-          ),
-          tabBar: CupertinoTabBar(
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: 'Resume',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.work),
-                label: 'Portfolio',
-              ),
-            ],
-          ),
-        ));
+        tabBar: CupertinoTabBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Resume',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.work),
+              label: 'Portfolio',
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

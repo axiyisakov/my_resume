@@ -6,6 +6,7 @@ import 'package:my_resume/app/data/models/portfolio.dart';
 import 'package:my_resume/core/exception/exceptions.dart';
 import 'package:my_resume/core/local/local_data_reader.dart';
 import 'package:my_resume/gen/assets.gen.dart';
+import 'package:welltested_annotation/welltested_annotation.dart';
 
 abstract interface class LocalDataSource {
   Future<CVModel> getCV();
@@ -13,6 +14,7 @@ abstract interface class LocalDataSource {
 }
 
 @LazySingleton(as: LocalDataSource)
+@Welltested()
 class LocalDataSourceImpl implements LocalDataSource {
   final LocalDataReader _reader;
 
