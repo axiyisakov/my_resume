@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 abstract interface class CVProviderBase {}
 
 class CVProvider extends ChangeNotifier implements CVProviderBase {
-  final PageController pageController;
+  final CupertinoTabController pageController;
 
-  CVProvider() : pageController = PageController() {
+  CVProvider() : pageController = CupertinoTabController() {
     pageController.addListener(() {
       notifyListeners();
     });

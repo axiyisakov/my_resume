@@ -19,6 +19,9 @@ _$CVModelImpl _$$CVModelImplFromJson(Map<String, dynamic> json) =>
       certificates: (json['certificates'] as List<dynamic>)
           .map((e) => CVSubitem.fromJson(e as Map<String, dynamic>))
           .toList(),
+      skills: (json['skills'] as List<dynamic>)
+          .map((e) => CVSubitem.fromJson(e as Map<String, dynamic>))
+          .toList(),
       workingExperience: (json['working_experience'] as List<dynamic>)
           .map((e) => CVSubitem.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -34,6 +37,7 @@ Map<String, dynamic> _$$CVModelImplToJson(_$CVModelImpl instance) =>
       'contact': instance.contact,
       'education': instance.education,
       'certificates': instance.certificates,
+      'skills': instance.skills,
       'working_experience': instance.workingExperience,
       'professional_summary': instance.professionalSummary,
     };

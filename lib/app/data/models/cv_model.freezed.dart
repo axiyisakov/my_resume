@@ -26,6 +26,7 @@ mixin _$CVModel {
   List<CVSubitem> get contact => throw _privateConstructorUsedError;
   List<CVSubitem> get education => throw _privateConstructorUsedError;
   List<CVSubitem> get certificates => throw _privateConstructorUsedError;
+  List<CVSubitem> get skills => throw _privateConstructorUsedError;
   @JsonKey(name: 'working_experience')
   List<CVSubitem> get workingExperience => throw _privateConstructorUsedError;
   @JsonKey(name: 'professional_summary')
@@ -47,6 +48,7 @@ abstract class $CVModelCopyWith<$Res> {
       List<CVSubitem> contact,
       List<CVSubitem> education,
       List<CVSubitem> certificates,
+      List<CVSubitem> skills,
       @JsonKey(name: 'working_experience') List<CVSubitem> workingExperience,
       @JsonKey(name: 'professional_summary')
       List<CVSubitem> professionalSummary});
@@ -70,6 +72,7 @@ class _$CVModelCopyWithImpl<$Res, $Val extends CVModel>
     Object? contact = null,
     Object? education = null,
     Object? certificates = null,
+    Object? skills = null,
     Object? workingExperience = null,
     Object? professionalSummary = null,
   }) {
@@ -93,6 +96,10 @@ class _$CVModelCopyWithImpl<$Res, $Val extends CVModel>
       certificates: null == certificates
           ? _value.certificates
           : certificates // ignore: cast_nullable_to_non_nullable
+              as List<CVSubitem>,
+      skills: null == skills
+          ? _value.skills
+          : skills // ignore: cast_nullable_to_non_nullable
               as List<CVSubitem>,
       workingExperience: null == workingExperience
           ? _value.workingExperience
@@ -119,6 +126,7 @@ abstract class _$$CVModelImplCopyWith<$Res> implements $CVModelCopyWith<$Res> {
       List<CVSubitem> contact,
       List<CVSubitem> education,
       List<CVSubitem> certificates,
+      List<CVSubitem> skills,
       @JsonKey(name: 'working_experience') List<CVSubitem> workingExperience,
       @JsonKey(name: 'professional_summary')
       List<CVSubitem> professionalSummary});
@@ -140,6 +148,7 @@ class __$$CVModelImplCopyWithImpl<$Res>
     Object? contact = null,
     Object? education = null,
     Object? certificates = null,
+    Object? skills = null,
     Object? workingExperience = null,
     Object? professionalSummary = null,
   }) {
@@ -164,6 +173,10 @@ class __$$CVModelImplCopyWithImpl<$Res>
           ? _value._certificates
           : certificates // ignore: cast_nullable_to_non_nullable
               as List<CVSubitem>,
+      skills: null == skills
+          ? _value._skills
+          : skills // ignore: cast_nullable_to_non_nullable
+              as List<CVSubitem>,
       workingExperience: null == workingExperience
           ? _value._workingExperience
           : workingExperience // ignore: cast_nullable_to_non_nullable
@@ -185,6 +198,7 @@ class _$CVModelImpl implements _CVModel {
       required final List<CVSubitem> contact,
       required final List<CVSubitem> education,
       required final List<CVSubitem> certificates,
+      required final List<CVSubitem> skills,
       @JsonKey(name: 'working_experience')
       required final List<CVSubitem> workingExperience,
       @JsonKey(name: 'professional_summary')
@@ -192,6 +206,7 @@ class _$CVModelImpl implements _CVModel {
       : _contact = contact,
         _education = education,
         _certificates = certificates,
+        _skills = skills,
         _workingExperience = workingExperience,
         _professionalSummary = professionalSummary;
 
@@ -227,6 +242,14 @@ class _$CVModelImpl implements _CVModel {
     return EqualUnmodifiableListView(_certificates);
   }
 
+  final List<CVSubitem> _skills;
+  @override
+  List<CVSubitem> get skills {
+    if (_skills is EqualUnmodifiableListView) return _skills;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_skills);
+  }
+
   final List<CVSubitem> _workingExperience;
   @override
   @JsonKey(name: 'working_experience')
@@ -249,7 +272,7 @@ class _$CVModelImpl implements _CVModel {
 
   @override
   String toString() {
-    return 'CVModel(name: $name, imagePath: $imagePath, contact: $contact, education: $education, certificates: $certificates, workingExperience: $workingExperience, professionalSummary: $professionalSummary)';
+    return 'CVModel(name: $name, imagePath: $imagePath, contact: $contact, education: $education, certificates: $certificates, skills: $skills, workingExperience: $workingExperience, professionalSummary: $professionalSummary)';
   }
 
   @override
@@ -265,6 +288,7 @@ class _$CVModelImpl implements _CVModel {
                 .equals(other._education, _education) &&
             const DeepCollectionEquality()
                 .equals(other._certificates, _certificates) &&
+            const DeepCollectionEquality().equals(other._skills, _skills) &&
             const DeepCollectionEquality()
                 .equals(other._workingExperience, _workingExperience) &&
             const DeepCollectionEquality()
@@ -280,6 +304,7 @@ class _$CVModelImpl implements _CVModel {
       const DeepCollectionEquality().hash(_contact),
       const DeepCollectionEquality().hash(_education),
       const DeepCollectionEquality().hash(_certificates),
+      const DeepCollectionEquality().hash(_skills),
       const DeepCollectionEquality().hash(_workingExperience),
       const DeepCollectionEquality().hash(_professionalSummary));
 
@@ -304,6 +329,7 @@ abstract class _CVModel implements CVModel {
       required final List<CVSubitem> contact,
       required final List<CVSubitem> education,
       required final List<CVSubitem> certificates,
+      required final List<CVSubitem> skills,
       @JsonKey(name: 'working_experience')
       required final List<CVSubitem> workingExperience,
       @JsonKey(name: 'professional_summary')
@@ -322,6 +348,8 @@ abstract class _CVModel implements CVModel {
   List<CVSubitem> get education;
   @override
   List<CVSubitem> get certificates;
+  @override
+  List<CVSubitem> get skills;
   @override
   @JsonKey(name: 'working_experience')
   List<CVSubitem> get workingExperience;

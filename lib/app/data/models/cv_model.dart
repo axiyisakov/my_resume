@@ -14,6 +14,7 @@ class CVModel with _$CVModel {
     required List<CVSubitem> contact,
     required List<CVSubitem> education,
     required List<CVSubitem> certificates,
+    required List<CVSubitem> skills,
     @JsonKey(name: 'working_experience')
     required List<CVSubitem> workingExperience,
     @JsonKey(name: 'professional_summary')

@@ -5,6 +5,7 @@ import 'package:my_resume/app/data/models/cv_model.dart';
 import 'package:my_resume/app/data/models/portfolio.dart';
 import 'package:my_resume/core/exception/exceptions.dart';
 import 'package:my_resume/core/local/local_data_reader.dart';
+import 'package:my_resume/gen/assets.gen.dart';
 
 abstract interface class LocalDataSource {
   Future<CVModel> getCV();
@@ -21,7 +22,7 @@ class LocalDataSourceImpl implements LocalDataSource {
 
   @override
   Future<CVModel> getCV() async {
-    final responseOrError = await _reader.readData('assets/cv.json');
+    final responseOrError = await _reader.readData(Assets.cv);
     final data = responseOrError.fold((error) => error, (data) => data);
 
     if (responseOrError.isRight() && data is String) {
@@ -33,7 +34,7 @@ class LocalDataSourceImpl implements LocalDataSource {
 
   @override
   Future<Portfolio> getPortfolio() async {
-    final responseOrError = await _reader.readData('assets/portfolio.json');
+    final responseOrError = await _reader.readData(Assets.portfolio);
     final data = responseOrError.fold((error) => error, (data) => data);
 
     if (responseOrError.isRight() && data is String) {

@@ -23,6 +23,10 @@ dependencies:
   equatable: any
   freezed_annotation: any
   json_annotation: ^4.8.1
+  cached_network_image: any
+  auto_size_text: any
+  google_fonts: any
+  getwidget: any
 
 dev_dependencies:
   flutter_test:
@@ -43,6 +47,7 @@ flutter:
   assets:
     - assets/cv.json
     - assets/portfolio.json
+    - assets/image/
 
 
   # fonts:
