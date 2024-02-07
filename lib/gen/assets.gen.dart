@@ -15,8 +15,21 @@ class $AssetsImageGen {
   /// File path: assets/image/avatar.jpg
   AssetGenImage get avatar => const AssetGenImage('assets/image/avatar.jpg');
 
+  $AssetsImagePortfolioGen get portfolio => const $AssetsImagePortfolioGen();
+
   /// List of all assets
   List<AssetGenImage> get values => [avatar];
+}
+
+class $AssetsImagePortfolioGen {
+  const $AssetsImagePortfolioGen();
+
+  /// File path: assets/image/portfolio/my_xabar.png
+  AssetGenImage get myXabar =>
+      const AssetGenImage('assets/image/portfolio/my_xabar.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [myXabar];
 }
 
 class Assets {

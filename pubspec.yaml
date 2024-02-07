@@ -48,6 +48,7 @@ flutter:
     - assets/cv.json
     - assets/portfolio.json
     - assets/image/
+    - assets/image/portfolio/
 
 
   # fonts:
