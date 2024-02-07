@@ -31,6 +31,7 @@ dependencies:
   gap: ^3.0.1
   badges: ^3.1.2
   adaptive_theme: any
+  flutter_animate: any
 
 dev_dependencies:
   flutter_test:

@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:my_resume/app/data/models/cv_model.dart';
+import 'package:my_resume/app/presentation/animation/animation.dart';
 import 'package:my_resume/app/presentation/provider/provider.dart';
 import 'package:my_resume/app/presentation/widget/app_tile.dart';
 import 'package:my_resume/app/presentation/widget/default_text.dart';
@@ -70,7 +71,7 @@ class ResumeBody extends StatelessWidget {
                               child,
                     ),
                   ),
-                ),
+                ).flipCard(),
                 title: CupertinoListTile(
                   title: DefaultText(
                     text: cv.name,
@@ -96,7 +97,7 @@ class ResumeBody extends StatelessWidget {
                       context,
                       color: AppColors.accentBlue,
                     ),
-                  ),
+                  ).headerTitleAnimation(),
                   for (var item in cv.contact)
                     AppTile(
                       subitem: item,
@@ -108,7 +109,7 @@ class ResumeBody extends StatelessWidget {
                   const Gap(15),
                 ],
               ),
-            ),
+            ).textAnimation(),
           ),
 
           Padding(
@@ -125,7 +126,7 @@ class ResumeBody extends StatelessWidget {
                       context,
                       color: AppColors.accentBlue,
                     ),
-                  ),
+                  ).headerTitleAnimation(),
 
                   for (var item in cv.education)
                     AppTile(
@@ -138,7 +139,7 @@ class ResumeBody extends StatelessWidget {
                   const Gap(15),
                 ],
               ),
-            ),
+            ).textAnimation(),
           ),
           Padding(
             padding: const EdgeInsets.all(10.0),
@@ -154,7 +155,7 @@ class ResumeBody extends StatelessWidget {
                       context,
                       color: AppColors.accentBlue,
                     ),
-                  ),
+                  ).headerTitleAnimation(),
 
                   for (var item in cv.certificates)
                     AppTile(
@@ -167,7 +168,7 @@ class ResumeBody extends StatelessWidget {
                   const Gap(15),
                 ],
               ),
-            ),
+            ).textAnimation(),
           ),
           Padding(
             padding: const EdgeInsets.all(10.0),
@@ -183,7 +184,7 @@ class ResumeBody extends StatelessWidget {
                       context,
                       color: AppColors.accentBlue,
                     ),
-                  ),
+                  ).headerTitleAnimation(),
 
                   for (var item in cv.skills)
                     AppTile(
@@ -195,7 +196,7 @@ class ResumeBody extends StatelessWidget {
                   const Gap(15),
                 ],
               ),
-            ),
+            ).textAnimation(),
           ),
           Padding(
             padding: const EdgeInsets.all(10.0),
@@ -211,7 +212,7 @@ class ResumeBody extends StatelessWidget {
                       context,
                       color: AppColors.accentBlue,
                     ),
-                  ),
+                  ).headerTitleAnimation(),
 
                   for (var item in cv.professionalSummary)
                     AppTile(
@@ -224,7 +225,7 @@ class ResumeBody extends StatelessWidget {
                   const Gap(15),
                 ],
               ),
-            ),
+            ).textAnimation(),
           ),
           Padding(
             padding: const EdgeInsets.all(10.0),
@@ -240,7 +241,7 @@ class ResumeBody extends StatelessWidget {
                       context,
                       color: AppColors.accentBlue,
                     ),
-                  ),
+                  ).headerTitleAnimation(),
 
                   for (var item in cv.workingExperience)
                     AppTile(
@@ -253,7 +254,7 @@ class ResumeBody extends StatelessWidget {
                   const Gap(15),
                 ],
               ),
-            ),
+            ).textAnimation(),
           ),
           const SizedBox.square(
             dimension: 100,

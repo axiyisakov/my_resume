@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_resume/app/presentation/animation/animation.dart';
 import 'package:my_resume/app/presentation/provider/cv_provider.dart';
 import 'package:my_resume/app/presentation/widget/default_text.dart';
 import 'package:my_resume/core/extension/extension.dart';
@@ -28,12 +29,12 @@ class CVScreen extends StatelessWidget {
           );
         }),
         title: DefaultText(
-          text: 'My Resume',
+          text: 'My CV',
           style: AppTextStyles.title22(
             context,
             color: AppColors.accentBlue,
           ),
-        ),
+        ).headerTitleAnimation(),
         centerTitle: true,
         actions: [
           IconButton(
