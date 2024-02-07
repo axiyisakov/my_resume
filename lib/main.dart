@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:my_resume/app/presentation/view/cv_view.dart';
+import 'package:my_resume/core/di/locator.dart' as di;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  di.configureDependencies();
   runApp(const MyApp());
 }
 

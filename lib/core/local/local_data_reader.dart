@@ -1,8 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:injectable/injectable.dart';
 import 'package:my_resume/core/exception/failures.dart';
 
+@lazySingleton
 class LocalDataReader {
   Future<Either<Failures, String>> readData(String path) async {
     try {

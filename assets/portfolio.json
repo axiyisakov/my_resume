@@ -1,0 +1,55 @@
+{
+    "name":"My Portfolio",
+    "projects":[
+        {
+            "name":"Project 1",
+            "description":"This is a project",
+            "image":"https://via.placeholder.com/150"
+        },
+        {
+            "name":"Project 2",
+            "description":"This is a project",
+            "image":"https://via.placeholder.com/150"
+        },
+        {
+            "name":"Project 3",
+            "description":"This is a project",
+            "image":"https://via.placeholder.com/150"
+        },
+        {
+            "name":"Project 4",
+            "description":"This is a project",
+            "image":"https://via.placeholder.com/150"
+        },
+        {
+            "name":"Project 5",
+            "description":"This is a project",
+            "image":"https://via.placeholder.com/150"
+        },
+        {
+            "name":"Project 6",
+            "description":"This is a project",
+            "image":"https://via.placeholder.com/150"
+        },
+        {
+            "name":"Project 7",
+            "description":"This is a project",
+            "image":"https://via.placeholder.com/150"
+        },
+        {
+            "name":"Project 8",
+            "description":"This is a project",
+            "image":"https://via.placeholder.com/150"
+        },
+        {
+            "name":"Project 9",
+            "description":"This is a project",
+            "image":"https://via.placeholder.com/150"
+        },
+        {
+            "name":"Project 10",
+            "description":"This is a project",
+            "image":"https://via.placeholder.com/150"
+        }
+    ]
+}
