@@ -33,8 +33,9 @@ dependencies:
   adaptive_theme: any
   flutter_animate: any
   pdf: any
-  path_provider: any
+  downloads_path_provider_28: any
   open_filex: any
+  file_saver: ^0.2.9
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +59,7 @@ flutter:
     - assets/portfolio.json
     - assets/image/
     - assets/image/portfolio/
+    - assets/pdf/resume_cv.pdf
 
 
   # fonts:
