@@ -13,3 +13,8 @@ class LocalDataReadFailure extends Failures {
   @override
   List<Object?> get props => [];
 }
+
+class OpenPDFFailure extends Failures {
+  @override
+  List<Object?> get props => [];
+}

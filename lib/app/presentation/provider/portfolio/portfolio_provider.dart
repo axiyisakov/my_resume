@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 import 'package:my_resume/app/data/models/portfolio.dart';
 import 'package:my_resume/app/domain/usecases/cv/portfolio/get_portfolio.dart';
 import 'package:my_resume/core/di/locator.dart';
 
+@injectable
 class PortfolioProvider with ChangeNotifier {
   final GetPortfolio getPortfolio = sl<GetPortfolio>();
   var _isLoading = true;

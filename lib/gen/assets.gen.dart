@@ -21,6 +21,16 @@ class $AssetsImageGen {
   List<AssetGenImage> get values => [avatar];
 }
 
+class $AssetsPdfGen {
+  const $AssetsPdfGen();
+
+  /// File path: assets/pdf/resume_cv.pdf
+  String get resumeCv => 'assets/pdf/resume_cv.pdf';
+
+  /// List of all assets
+  List<String> get values => [resumeCv];
+}
+
 class $AssetsImagePortfolioGen {
   const $AssetsImagePortfolioGen();
 
@@ -37,6 +47,7 @@ class Assets {
 
   static const String cv = 'assets/cv.json';
   static const $AssetsImageGen image = $AssetsImageGen();
+  static const $AssetsPdfGen pdf = $AssetsPdfGen();
   static const String portfolio = 'assets/portfolio.json';
 
   /// List of all assets

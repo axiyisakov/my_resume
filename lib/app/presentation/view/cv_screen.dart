@@ -23,20 +23,47 @@ class CVScreen extends StatelessWidget {
           ),
         ).headerTitleAnimation(),
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              CupertinoIcons.printer,
-            ),
-          )
+        actions: const [
+          // Consumer<CVProvider>(builder: (context, provider, _) {
+          //   if (provider.isLoading) {
+          //     return const Center(
+          //       child: CircularProgressIndicator(),
+          //     );
+          //   } else if (provider.downloadError != null) {
+          //     return Center(
+          //         child: IconButton(
+          //       onPressed: provider.retry,
+          //       icon: const Icon(CupertinoIcons.refresh_thin),
+          //     ));
+          //   }
+          //   return IconButton(
+          //     onPressed: () => provider.downloadCV(),
+          //     icon: const Icon(
+          //       CupertinoIcons.printer,
+          //     ),
+          //   );
+          // })
         ],
       ),
       body: CupertinoTabScaffold(
         tabBuilder: (context, index) => CupertinoTabView(
           builder: (context) {
             return Consumer<CVProvider>(
-              builder: (context, value, _) => CVPages.pages[index],
+              builder: (context, provider, _) {
+                if (provider.isLoading) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else if (provider.downloadError != null) {
+                  return Center(
+                    child: DefaultText(
+                      text: 'Error loading CV',
+                      style: AppTextStyles.body14(context),
+                    ),
+                  );
+                }
+                return CVPages.pages[index];
+              },
             );
           },
         ),

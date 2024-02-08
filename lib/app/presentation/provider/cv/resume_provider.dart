@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 import 'package:my_resume/app/data/models/cv_model.dart';
 import 'package:my_resume/app/domain/usecases/cv/resume/get_resume.dart';
 import 'package:my_resume/core/di/locator.dart';
 
+@injectable
 class ResumeProvider with ChangeNotifier {
   final GetResume getResume = sl<GetResume>();
   var _isLoading = true;
