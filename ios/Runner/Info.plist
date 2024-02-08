@@ -45,5 +45,10 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>LSApplicationCategoryType</key>
+	<string>&lt;key&gt;LSSupportsOpeningDocumentsInPlace&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;UIFileSharingEnabled&lt;/key&gt;
+    &lt;true/&gt;</string>
 </dict>
 </plist>

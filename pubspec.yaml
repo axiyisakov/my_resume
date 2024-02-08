@@ -32,6 +32,9 @@ dependencies:
   badges: ^3.1.2
   adaptive_theme: any
   flutter_animate: any
+  pdf: any
+  path_provider: any
+  open_filex: any
 
 dev_dependencies:
   flutter_test:
