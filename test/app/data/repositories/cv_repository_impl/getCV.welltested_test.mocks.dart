@@ -114,6 +114,15 @@ class MockCVModel extends _i1.Mock implements _i2.CVModel {
       ) as String);
 
   @override
+  String get position => (super.noSuchMethod(
+        Invocation.getter(#position),
+        returnValue: _i6.dummyValue<String>(
+          this,
+          Invocation.getter(#position),
+        ),
+      ) as String);
+
+  @override
   String get imagePath => (super.noSuchMethod(
         Invocation.getter(#imagePath),
         returnValue: _i6.dummyValue<String>(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:injectable/injectable.dart';
 import 'package:my_resume/core/theme/colors.dart';
+import 'package:my_resume/core/theme/fontsize.dart';
 import 'package:my_resume/core/theme/spacing.dart';
 
 const _dividerThemeData = DividerThemeData(
@@ -84,6 +86,16 @@ class AppLightThemeData extends AppThemeData {
             color: displaySmallTextColor,
           ),
         ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          selectedLabelStyle: GoogleFonts.poppins(
+            fontSize: FontSize.regular12,
+            fontWeight: FontWeight.normal,
+            color: AppColors.accentBlue,
+          ),
+          selectedIconTheme: IconThemeData(
+            color: accentBlue,
+          ),
+        ),
         dividerColor: AppColors.grey,
         dividerTheme: _dividerThemeData,
         colorScheme: ColorScheme.light(
@@ -164,6 +176,16 @@ class AppDarkThemeData extends AppThemeData {
           ),
           displaySmall: TextStyle(
             color: displaySmallTextColor,
+          ),
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          selectedLabelStyle: GoogleFonts.poppins(
+            fontSize: FontSize.regular12,
+            fontWeight: FontWeight.normal,
+            color: AppColors.accentBlue,
+          ),
+          selectedIconTheme: IconThemeData(
+            color: accentBlue,
           ),
         ),
         colorScheme: ColorScheme.dark(

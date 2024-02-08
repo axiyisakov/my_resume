@@ -9,6 +9,7 @@ part of 'cv_model.dart';
 _$CVModelImpl _$$CVModelImplFromJson(Map<String, dynamic> json) =>
     _$CVModelImpl(
       name: json['name'] as String,
+      position: json['position'] as String,
       imagePath: json['image_path'] as String,
       contact: (json['contact'] as List<dynamic>)
           .map((e) => CVSubitem.fromJson(e as Map<String, dynamic>))
@@ -33,6 +34,7 @@ _$CVModelImpl _$$CVModelImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$CVModelImplToJson(_$CVModelImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
+      'position': instance.position,
       'image_path': instance.imagePath,
       'contact': instance.contact,
       'education': instance.education,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:my_resume/app/data/models/cv_subitem.dart';
 import 'package:my_resume/app/presentation/widget/default_text.dart';
-import 'package:my_resume/core/theme/fontsize.dart';
+import 'package:my_resume/core/theme/text_styles.dart';
 
 class AppTile extends StatelessWidget {
   final CVSubitem subitem;

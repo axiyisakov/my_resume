@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:my_resume/app/presentation/animation/animation.dart';
 import 'package:my_resume/app/presentation/provider/cv_provider.dart';
 import 'package:my_resume/app/presentation/widget/default_text.dart';
-import 'package:my_resume/core/extension/extension.dart';
 import 'package:my_resume/core/pages.dart';
 import 'package:my_resume/core/theme/colors.dart';
-import 'package:my_resume/core/theme/fontsize.dart';
+import 'package:my_resume/core/theme/text_styles.dart';
 import 'package:provider/provider.dart';
 
 class CVScreen extends StatelessWidget {
@@ -16,18 +15,6 @@ class CVScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Consumer<CVProvider>(builder: (context, provider, _) {
-          return Padding(
-            padding: const EdgeInsets.only(left: 10.0),
-            child: CupertinoSwitch(
-              value: provider.isLightTheme,
-              onChanged: (value) {
-                context.changeTheme(value);
-                provider.changeTheme(value);
-              },
-            ),
-          );
-        }),
         title: DefaultText(
           text: 'My CV',
           style: AppTextStyles.title22(
@@ -54,14 +41,32 @@ class CVScreen extends StatelessWidget {
           },
         ),
         tabBar: CupertinoTabBar(
+          activeColor: AppColors.accentBlue,
+          inactiveColor: AppColors.grey,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
               label: 'Resume',
+              activeIcon: Icon(
+                Icons.person,
+                color: AppColors.accentBlue,
+              ),
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.work),
               label: 'Portfolio',
+              activeIcon: Icon(
+                Icons.work,
+                color: AppColors.accentBlue,
+              ),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Preferences',
+              activeIcon: Icon(
+                Icons.settings,
+                color: AppColors.accentBlue,
+              ),
             ),
           ],
         ),

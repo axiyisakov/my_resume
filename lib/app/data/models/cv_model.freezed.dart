@@ -21,6 +21,7 @@ CVModel _$CVModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CVModel {
   String get name => throw _privateConstructorUsedError;
+  String get position => throw _privateConstructorUsedError;
   @JsonKey(name: 'image_path')
   String get imagePath => throw _privateConstructorUsedError;
   List<CVSubitem> get contact => throw _privateConstructorUsedError;
@@ -44,6 +45,7 @@ abstract class $CVModelCopyWith<$Res> {
   @useResult
   $Res call(
       {String name,
+      String position,
       @JsonKey(name: 'image_path') String imagePath,
       List<CVSubitem> contact,
       List<CVSubitem> education,
@@ -68,6 +70,7 @@ class _$CVModelCopyWithImpl<$Res, $Val extends CVModel>
   @override
   $Res call({
     Object? name = null,
+    Object? position = null,
     Object? imagePath = null,
     Object? contact = null,
     Object? education = null,
@@ -80,6 +83,10 @@ class _$CVModelCopyWithImpl<$Res, $Val extends CVModel>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      position: null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
               as String,
       imagePath: null == imagePath
           ? _value.imagePath
@@ -122,6 +129,7 @@ abstract class _$$CVModelImplCopyWith<$Res> implements $CVModelCopyWith<$Res> {
   @useResult
   $Res call(
       {String name,
+      String position,
       @JsonKey(name: 'image_path') String imagePath,
       List<CVSubitem> contact,
       List<CVSubitem> education,
@@ -144,6 +152,7 @@ class __$$CVModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
+    Object? position = null,
     Object? imagePath = null,
     Object? contact = null,
     Object? education = null,
@@ -156,6 +165,10 @@ class __$$CVModelImplCopyWithImpl<$Res>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      position: null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
               as String,
       imagePath: null == imagePath
           ? _value.imagePath
@@ -194,6 +207,7 @@ class __$$CVModelImplCopyWithImpl<$Res>
 class _$CVModelImpl implements _CVModel {
   const _$CVModelImpl(
       {required this.name,
+      required this.position,
       @JsonKey(name: 'image_path') required this.imagePath,
       required final List<CVSubitem> contact,
       required final List<CVSubitem> education,
@@ -215,6 +229,8 @@ class _$CVModelImpl implements _CVModel {
 
   @override
   final String name;
+  @override
+  final String position;
   @override
   @JsonKey(name: 'image_path')
   final String imagePath;
@@ -272,7 +288,7 @@ class _$CVModelImpl implements _CVModel {
 
   @override
   String toString() {
-    return 'CVModel(name: $name, imagePath: $imagePath, contact: $contact, education: $education, certificates: $certificates, skills: $skills, workingExperience: $workingExperience, professionalSummary: $professionalSummary)';
+    return 'CVModel(name: $name, position: $position, imagePath: $imagePath, contact: $contact, education: $education, certificates: $certificates, skills: $skills, workingExperience: $workingExperience, professionalSummary: $professionalSummary)';
   }
 
   @override
@@ -281,6 +297,8 @@ class _$CVModelImpl implements _CVModel {
         (other.runtimeType == runtimeType &&
             other is _$CVModelImpl &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
             (identical(other.imagePath, imagePath) ||
                 other.imagePath == imagePath) &&
             const DeepCollectionEquality().equals(other._contact, _contact) &&
@@ -300,6 +318,7 @@ class _$CVModelImpl implements _CVModel {
   int get hashCode => Object.hash(
       runtimeType,
       name,
+      position,
       imagePath,
       const DeepCollectionEquality().hash(_contact),
       const DeepCollectionEquality().hash(_education),
@@ -325,6 +344,7 @@ class _$CVModelImpl implements _CVModel {
 abstract class _CVModel implements CVModel {
   const factory _CVModel(
       {required final String name,
+      required final String position,
       @JsonKey(name: 'image_path') required final String imagePath,
       required final List<CVSubitem> contact,
       required final List<CVSubitem> education,
@@ -339,6 +359,8 @@ abstract class _CVModel implements CVModel {
 
   @override
   String get name;
+  @override
+  String get position;
   @override
   @JsonKey(name: 'image_path')
   String get imagePath;

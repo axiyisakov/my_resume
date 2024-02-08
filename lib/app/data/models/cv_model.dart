@@ -10,6 +10,7 @@ part 'cv_model.g.dart';
 class CVModel with _$CVModel {
   const factory CVModel({
     required String name,
+    required String position,
     @JsonKey(name: 'image_path') required String imagePath,
     required List<CVSubitem> contact,
     required List<CVSubitem> education,

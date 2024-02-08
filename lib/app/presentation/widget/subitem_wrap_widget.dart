@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:my_resume/app/presentation/widget/default_text.dart';
-import 'package:my_resume/core/theme/fontsize.dart';
+import 'package:my_resume/core/theme/text_styles.dart';
 
 class SubItemsWrapWidget extends StatelessWidget {
   final List<String> values;

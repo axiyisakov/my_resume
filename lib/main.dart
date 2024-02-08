@@ -16,16 +16,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AdaptiveTheme(
-        light: di.sl<AppLightThemeData>().materialThemeData,
-        dark: di.sl<AppDarkThemeData>().materialThemeData,
-        initial: AdaptiveThemeMode.system,
-        builder: (light, dark) {
-          return MaterialApp(
-            title: 'Flutter Demo',
-            theme: light,
-            darkTheme: dark,
-            home: const CVView(),
-          );
-        });
+      light: di.sl<AppLightThemeData>().materialThemeData,
+      dark: di.sl<AppDarkThemeData>().materialThemeData,
+      initial: AdaptiveThemeMode.system,
+      builder: (light, dark) {
+        return MaterialApp(
+          title: 'Flutter Demo',
+          theme: light,
+          darkTheme: dark,
+          home: const CVView(),
+        );
+      },
+    );
   }
 }
