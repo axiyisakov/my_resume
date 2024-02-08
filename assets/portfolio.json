@@ -4,7 +4,14 @@
         {
             "name":"My Xabar",
             "description":"This is a project",
-            "image":"assets/image/portfolio/my_xabar.png"
+            "image":"assets/image/portfolio/my_xabar.png",
+            "status":"completed"
+        },
+        {
+            "name":"Movies",
+            "description":"This is a project",
+            "image":"assets/image/portfolio/movies.png",
+            "status":"inProgress"
         }
         
     ]

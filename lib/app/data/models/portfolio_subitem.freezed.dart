@@ -23,6 +23,7 @@ mixin _$PortfolioSubitem {
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
+  PortfolioItemStatusEnum get status => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +37,11 @@ abstract class $PortfolioSubitemCopyWith<$Res> {
           PortfolioSubitem value, $Res Function(PortfolioSubitem) then) =
       _$PortfolioSubitemCopyWithImpl<$Res, PortfolioSubitem>;
   @useResult
-  $Res call({String name, String description, String image});
+  $Res call(
+      {String name,
+      String description,
+      String image,
+      PortfolioItemStatusEnum status});
 }
 
 /// @nodoc
@@ -55,6 +60,7 @@ class _$PortfolioSubitemCopyWithImpl<$Res, $Val extends PortfolioSubitem>
     Object? name = null,
     Object? description = null,
     Object? image = null,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -69,6 +75,10 @@ class _$PortfolioSubitemCopyWithImpl<$Res, $Val extends PortfolioSubitem>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as PortfolioItemStatusEnum,
     ) as $Val);
   }
 }
@@ -81,7 +91,11 @@ abstract class _$$PortfolioSubitemImplCopyWith<$Res>
       __$$PortfolioSubitemImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String description, String image});
+  $Res call(
+      {String name,
+      String description,
+      String image,
+      PortfolioItemStatusEnum status});
 }
 
 /// @nodoc
@@ -98,6 +112,7 @@ class __$$PortfolioSubitemImplCopyWithImpl<$Res>
     Object? name = null,
     Object? description = null,
     Object? image = null,
+    Object? status = null,
   }) {
     return _then(_$PortfolioSubitemImpl(
       name: null == name
@@ -112,6 +127,10 @@ class __$$PortfolioSubitemImplCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as PortfolioItemStatusEnum,
     ));
   }
 }
@@ -120,7 +139,10 @@ class __$$PortfolioSubitemImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PortfolioSubitemImpl implements _PortfolioSubitem {
   const _$PortfolioSubitemImpl(
-      {required this.name, required this.description, required this.image});
+      {required this.name,
+      required this.description,
+      required this.image,
+      this.status = PortfolioItemStatusEnum.completed});
 
   factory _$PortfolioSubitemImpl.fromJson(Map<String, dynamic> json) =>
       _$$PortfolioSubitemImplFromJson(json);
@@ -131,10 +153,13 @@ class _$PortfolioSubitemImpl implements _PortfolioSubitem {
   final String description;
   @override
   final String image;
+  @override
+  @JsonKey()
+  final PortfolioItemStatusEnum status;
 
   @override
   String toString() {
-    return 'PortfolioSubitem(name: $name, description: $description, image: $image)';
+    return 'PortfolioSubitem(name: $name, description: $description, image: $image, status: $status)';
   }
 
   @override
@@ -145,12 +170,14 @@ class _$PortfolioSubitemImpl implements _PortfolioSubitem {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.image, image) || other.image == image));
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, description, image);
+  int get hashCode =>
+      Object.hash(runtimeType, name, description, image, status);
 
   @JsonKey(ignore: true)
   @override
@@ -171,7 +198,8 @@ abstract class _PortfolioSubitem implements PortfolioSubitem {
   const factory _PortfolioSubitem(
       {required final String name,
       required final String description,
-      required final String image}) = _$PortfolioSubitemImpl;
+      required final String image,
+      final PortfolioItemStatusEnum status}) = _$PortfolioSubitemImpl;
 
   factory _PortfolioSubitem.fromJson(Map<String, dynamic> json) =
       _$PortfolioSubitemImpl.fromJson;
@@ -182,6 +210,8 @@ abstract class _PortfolioSubitem implements PortfolioSubitem {
   String get description;
   @override
   String get image;
+  @override
+  PortfolioItemStatusEnum get status;
   @override
   @JsonKey(ignore: true)
   _$$PortfolioSubitemImplCopyWith<_$PortfolioSubitemImpl> get copyWith =>
