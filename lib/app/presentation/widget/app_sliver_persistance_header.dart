@@ -6,7 +6,15 @@ class AppSPH extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return child;
+    return SizedBox.expand(
+      child: Card(
+        margin: EdgeInsets.zero,
+        elevation: .0,
+        child: Center(
+          child: child,
+        ),
+      ),
+    );
   }
 
   @override
@@ -16,7 +24,7 @@ class AppSPH extends SliverPersistentHeaderDelegate {
   double get minExtent => kToolbarHeight;
 
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
-    return true;
+  bool shouldRebuild(AppSPH oldDelegate) {
+    return child != oldDelegate.child;
   }
 }

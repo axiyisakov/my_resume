@@ -84,7 +84,6 @@ class ResumeBody extends StatelessWidget {
         ).toSliver(),
         SliverPersistentHeader(
           pinned: true,
-          floating: true,
           delegate: AppSPH(
             child: DefaultText(
               text: 'Contact',
@@ -92,7 +91,7 @@ class ResumeBody extends StatelessWidget {
                 context,
                 color: AppColors.accentBlue,
               ),
-            ),
+            ).headerTitleAnimation(),
           ),
         ),
         //! Contact
@@ -104,13 +103,6 @@ class ResumeBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Gap(15),
-                DefaultText(
-                  text: 'Contact',
-                  style: AppTextStyles.headlineBold14(
-                    context,
-                    color: AppColors.accentBlue,
-                  ),
-                ).withLinearGradient(context).headerTitleAnimation(),
                 for (var item in cv.contact)
                   AppTile(
                     subitem: item,
@@ -125,6 +117,18 @@ class ResumeBody extends StatelessWidget {
           ).textAnimation(),
         ).toSliver(),
 
+        SliverPersistentHeader(
+          pinned: true,
+          delegate: AppSPH(
+            child: DefaultText(
+              text: 'Education',
+              style: AppTextStyles.headlineBold14(
+                context,
+                color: AppColors.accentBlue,
+              ),
+            ).headerTitleAnimation(),
+          ),
+        ),
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Card(
@@ -133,13 +137,6 @@ class ResumeBody extends StatelessWidget {
               children: [
                 //! Education
                 const Gap(15),
-                DefaultText(
-                  text: 'Education',
-                  style: AppTextStyles.headlineBold14(
-                    context,
-                    color: AppColors.accentBlue,
-                  ),
-                ).headerTitleAnimation(),
 
                 for (var item in cv.education)
                   AppTile(
@@ -154,22 +151,26 @@ class ResumeBody extends StatelessWidget {
             ),
           ).textAnimation(),
         ).toSliver(),
+        //! Certifications
+        SliverPersistentHeader(
+          pinned: true,
+          delegate: AppSPH(
+            child: DefaultText(
+              text: 'Certifications',
+              style: AppTextStyles.headlineBold14(
+                context,
+                color: AppColors.accentBlue,
+              ),
+            ).headerTitleAnimation(),
+          ),
+        ),
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                //! Certifications
                 const Gap(15),
-                DefaultText(
-                  text: 'Certifications',
-                  style: AppTextStyles.headlineBold14(
-                    context,
-                    color: AppColors.accentBlue,
-                  ),
-                ).headerTitleAnimation(),
-
                 for (var item in cv.certificates)
                   AppTile(
                     subitem: item,
@@ -183,6 +184,19 @@ class ResumeBody extends StatelessWidget {
             ),
           ).textAnimation(),
         ).toSliver(),
+
+        SliverPersistentHeader(
+          pinned: true,
+          delegate: AppSPH(
+            child: DefaultText(
+              text: 'Skills',
+              style: AppTextStyles.headlineBold14(
+                context,
+                color: AppColors.accentBlue,
+              ),
+            ).headerTitleAnimation(),
+          ),
+        ),
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Card(
@@ -191,13 +205,6 @@ class ResumeBody extends StatelessWidget {
               children: [
                 //! Certifications
                 const Gap(15),
-                DefaultText(
-                  text: 'Skills',
-                  style: AppTextStyles.headlineBold14(
-                    context,
-                    color: AppColors.accentBlue,
-                  ),
-                ).headerTitleAnimation(),
 
                 for (var item in cv.skills)
                   AppTile(
@@ -211,6 +218,19 @@ class ResumeBody extends StatelessWidget {
             ),
           ).textAnimation(),
         ).toSliver(),
+
+        SliverPersistentHeader(
+          pinned: true,
+          delegate: AppSPH(
+            child: DefaultText(
+              text: 'Professional Summary',
+              style: AppTextStyles.headlineBold14(
+                context,
+                color: AppColors.accentBlue,
+              ),
+            ).headerTitleAnimation(),
+          ),
+        ),
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Card(
@@ -219,13 +239,6 @@ class ResumeBody extends StatelessWidget {
               children: [
                 //! Professional Summary
                 const Gap(15),
-                DefaultText(
-                  text: 'Professional Summary',
-                  style: AppTextStyles.headlineBold14(
-                    context,
-                    color: AppColors.accentBlue,
-                  ),
-                ).headerTitleAnimation(),
 
                 for (var item in cv.professionalSummary)
                   AppTile(
@@ -240,6 +253,19 @@ class ResumeBody extends StatelessWidget {
             ),
           ).textAnimation(),
         ).toSliver(),
+
+        SliverPersistentHeader(
+          pinned: true,
+          delegate: AppSPH(
+            child: DefaultText(
+              text: 'Working History',
+              style: AppTextStyles.headlineBold14(
+                context,
+                color: AppColors.accentBlue,
+              ),
+            ).headerTitleAnimation(),
+          ),
+        ),
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Card(
@@ -248,13 +274,6 @@ class ResumeBody extends StatelessWidget {
               children: [
                 //! Working History
                 const Gap(15),
-                DefaultText(
-                  text: 'Working History',
-                  style: AppTextStyles.headlineBold14(
-                    context,
-                    color: AppColors.accentBlue,
-                  ),
-                ).headerTitleAnimation(),
 
                 for (var item in cv.workingExperience)
                   AppTile(
@@ -269,7 +288,9 @@ class ResumeBody extends StatelessWidget {
             ),
           ).textAnimation(),
         ).toSliver(),
-        const Gap(kFloatingActionButtonMargin).toSliver(),
+        const Gap(
+          kFloatingActionButtonMargin,
+        ).toSliver(),
       ],
     );
   }

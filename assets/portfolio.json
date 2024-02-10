@@ -2,17 +2,34 @@
     "name":"My Portfolio",
     "projects":[
         {
+            "name":"UNG Mobile",
+            "description":"This is a project",
+            "image":"assets/image/portfolio/ungmobile.png",
+            "link":null,
+            "status":"completed"
+        },
+        {
+            "name":"IT-Med",
+            "description":"This is a project",
+            "link":null,
+            "image":"assets/image/portfolio/itmed.png",
+            "status":"completed"
+        },
+        {
             "name":"My Xabar",
             "description":"This is a project",
+            "link":"https://play.google.com/store/apps/details?id=com.axiydev.myxabar&pcampaignid=web_share",
             "image":"assets/image/portfolio/my_xabar.png",
             "status":"completed"
         },
         {
             "name":"Movies",
             "description":"This is a project",
+            "link":null,
             "image":"assets/image/portfolio/movies.png",
             "status":"inProgress"
         }
+       
         
     ]
 }

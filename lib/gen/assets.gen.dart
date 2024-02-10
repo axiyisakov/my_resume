@@ -34,6 +34,10 @@ class $AssetsPdfGen {
 class $AssetsImagePortfolioGen {
   const $AssetsImagePortfolioGen();
 
+  /// File path: assets/image/portfolio/itmed.png
+  AssetGenImage get itmed =>
+      const AssetGenImage('assets/image/portfolio/itmed.png');
+
   /// File path: assets/image/portfolio/movies.png
   AssetGenImage get movies =>
       const AssetGenImage('assets/image/portfolio/movies.png');
@@ -42,8 +46,12 @@ class $AssetsImagePortfolioGen {
   AssetGenImage get myXabar =>
       const AssetGenImage('assets/image/portfolio/my_xabar.png');
 
+  /// File path: assets/image/portfolio/ungmobile.png
+  AssetGenImage get ungmobile =>
+      const AssetGenImage('assets/image/portfolio/ungmobile.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [movies, myXabar];
+  List<AssetGenImage> get values => [itmed, movies, myXabar, ungmobile];
 }
 
 class Assets {

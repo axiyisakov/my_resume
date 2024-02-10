@@ -1,8 +1,8 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
-import 'package:my_resume/core/downloader_cv/downloader_cv.dart';
 import 'package:my_resume/core/extension/extension.dart';
+import 'package:my_resume/core/services/downloader_cv.dart';
 import 'package:my_resume/gen/assets.gen.dart';
 
 abstract interface class CVProviderBase {

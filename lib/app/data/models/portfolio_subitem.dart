@@ -14,6 +14,7 @@ class PortfolioSubitem with _$PortfolioSubitem {
     required String name,
     required String description,
     required String image,
+    String? link,
     @Default(PortfolioItemStatusEnum.completed) PortfolioItemStatusEnum status,
   }) = _PortfolioSubitem;
 

@@ -12,6 +12,7 @@ _$PortfolioSubitemImpl _$$PortfolioSubitemImplFromJson(
       name: json['name'] as String,
       description: json['description'] as String,
       image: json['image'] as String,
+      link: json['link'] as String?,
       status: $enumDecodeNullable(
               _$PortfolioItemStatusEnumEnumMap, json['status']) ??
           PortfolioItemStatusEnum.completed,
@@ -23,6 +24,7 @@ Map<String, dynamic> _$$PortfolioSubitemImplToJson(
       'name': instance.name,
       'description': instance.description,
       'image': instance.image,
+      'link': instance.link,
       'status': _$PortfolioItemStatusEnumEnumMap[instance.status]!,
     };
 

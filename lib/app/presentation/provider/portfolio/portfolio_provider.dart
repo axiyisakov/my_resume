@@ -3,13 +3,15 @@ import 'package:injectable/injectable.dart';
 import 'package:my_resume/app/data/models/portfolio.dart';
 import 'package:my_resume/app/domain/usecases/cv/portfolio/get_portfolio.dart';
 import 'package:my_resume/core/di/locator.dart';
+import 'package:my_resume/core/services/launcher.dart';
 
 @injectable
 class PortfolioProvider with ChangeNotifier {
   final GetPortfolio getPortfolio = sl<GetPortfolio>();
+  final AppUrlLauncher appUrlLauncher = sl<AppUrlLauncher>();
   var _isLoading = true;
   Portfolio? _portfolio;
-
+  Object? _error;
   PortfolioProvider() {
     _fetchPortfolio();
   }
@@ -34,6 +36,23 @@ class PortfolioProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  void launchURL(String url) async {
+    _isLoading = true;
+    final result = await appUrlLauncher.launchUrl(url);
+    result.fold(
+      (error) {
+        _isLoading = false;
+        _error = error;
+        notifyListeners();
+      },
+      (data) {
+        _isLoading = false;
+        notifyListeners();
+      },
+    );
+  }
+
+  Object? get error => _error;
   bool get isLoading => _isLoading;
   Portfolio? get portfolio => _portfolio;
 }

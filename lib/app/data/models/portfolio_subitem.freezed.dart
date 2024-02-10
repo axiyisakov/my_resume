@@ -23,6 +23,7 @@ mixin _$PortfolioSubitem {
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
+  String? get link => throw _privateConstructorUsedError;
   PortfolioItemStatusEnum get status => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -41,6 +42,7 @@ abstract class $PortfolioSubitemCopyWith<$Res> {
       {String name,
       String description,
       String image,
+      String? link,
       PortfolioItemStatusEnum status});
 }
 
@@ -60,6 +62,7 @@ class _$PortfolioSubitemCopyWithImpl<$Res, $Val extends PortfolioSubitem>
     Object? name = null,
     Object? description = null,
     Object? image = null,
+    Object? link = freezed,
     Object? status = null,
   }) {
     return _then(_value.copyWith(
@@ -75,6 +78,10 @@ class _$PortfolioSubitemCopyWithImpl<$Res, $Val extends PortfolioSubitem>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
+      link: freezed == link
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -95,6 +102,7 @@ abstract class _$$PortfolioSubitemImplCopyWith<$Res>
       {String name,
       String description,
       String image,
+      String? link,
       PortfolioItemStatusEnum status});
 }
 
@@ -112,6 +120,7 @@ class __$$PortfolioSubitemImplCopyWithImpl<$Res>
     Object? name = null,
     Object? description = null,
     Object? image = null,
+    Object? link = freezed,
     Object? status = null,
   }) {
     return _then(_$PortfolioSubitemImpl(
@@ -127,6 +136,10 @@ class __$$PortfolioSubitemImplCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
+      link: freezed == link
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -142,6 +155,7 @@ class _$PortfolioSubitemImpl implements _PortfolioSubitem {
       {required this.name,
       required this.description,
       required this.image,
+      this.link,
       this.status = PortfolioItemStatusEnum.completed});
 
   factory _$PortfolioSubitemImpl.fromJson(Map<String, dynamic> json) =>
@@ -154,12 +168,14 @@ class _$PortfolioSubitemImpl implements _PortfolioSubitem {
   @override
   final String image;
   @override
+  final String? link;
+  @override
   @JsonKey()
   final PortfolioItemStatusEnum status;
 
   @override
   String toString() {
-    return 'PortfolioSubitem(name: $name, description: $description, image: $image, status: $status)';
+    return 'PortfolioSubitem(name: $name, description: $description, image: $image, link: $link, status: $status)';
   }
 
   @override
@@ -171,13 +187,14 @@ class _$PortfolioSubitemImpl implements _PortfolioSubitem {
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.image, image) || other.image == image) &&
+            (identical(other.link, link) || other.link == link) &&
             (identical(other.status, status) || other.status == status));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, name, description, image, status);
+      Object.hash(runtimeType, name, description, image, link, status);
 
   @JsonKey(ignore: true)
   @override
@@ -199,6 +216,7 @@ abstract class _PortfolioSubitem implements PortfolioSubitem {
       {required final String name,
       required final String description,
       required final String image,
+      final String? link,
       final PortfolioItemStatusEnum status}) = _$PortfolioSubitemImpl;
 
   factory _PortfolioSubitem.fromJson(Map<String, dynamic> json) =
@@ -210,6 +228,8 @@ abstract class _PortfolioSubitem implements PortfolioSubitem {
   String get description;
   @override
   String get image;
+  @override
+  String? get link;
   @override
   PortfolioItemStatusEnum get status;
   @override

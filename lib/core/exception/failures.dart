@@ -18,3 +18,8 @@ class OpenPDFFailure extends Failures {
   @override
   List<Object?> get props => [];
 }
+
+class NetworkFailure extends Failures {
+  @override
+  List<Object?> get props => [];
+}
