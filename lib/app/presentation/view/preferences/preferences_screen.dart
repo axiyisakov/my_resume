@@ -6,6 +6,7 @@ import 'package:my_resume/app/presentation/animation/animation.dart';
 import 'package:my_resume/app/presentation/provider/cv_provider.dart';
 import 'package:my_resume/app/presentation/widget/default_text.dart';
 import 'package:my_resume/core/theme/colors.dart';
+import 'package:my_resume/core/theme/spacing.dart';
 import 'package:my_resume/core/theme/text_styles.dart';
 import 'package:provider/provider.dart';
 
@@ -20,12 +21,12 @@ class PreferncesScreen extends StatelessWidget {
         return Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(Spacing.ten),
               child: Card(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Gap(15),
+                    const Gap(Spacing.medium15),
                     DefaultText(
                       text: 'Theme',
                       style: AppTextStyles.headlineBold14(
@@ -38,8 +39,9 @@ class PreferncesScreen extends StatelessWidget {
                         text: 'Dark Mode',
                         style: AppTextStyles.body14(context),
                       ),
-                      size: 25,
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      size: Spacing.xLarge25,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: Spacing.medium15),
                       margin: EdgeInsets.zero,
                       activeBorderColor: Colors.green,
                       focusColor: Colors.green,
@@ -48,15 +50,16 @@ class PreferncesScreen extends StatelessWidget {
                       onChanged: (mode) => provider.changeTheme(context, mode),
                       inactiveIcon: null,
                     ),
-                    const Gap(15),
+                    const Gap(Spacing.medium15),
                     GFRadioListTile(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: Spacing.medium15),
                       margin: EdgeInsets.zero,
                       title: DefaultText(
                         text: 'Light Mode',
                         style: AppTextStyles.body14(context),
                       ),
-                      size: 25,
+                      size: Spacing.xLarge25,
                       activeBorderColor: Colors.green,
                       focusColor: Colors.green,
                       value: AdaptiveThemeMode.light,
@@ -64,15 +67,16 @@ class PreferncesScreen extends StatelessWidget {
                       onChanged: (mode) => provider.changeTheme(context, mode),
                       inactiveIcon: null,
                     ),
-                    const Gap(15),
+                    const Gap(Spacing.medium15),
                     GFRadioListTile(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: Spacing.medium15),
                       margin: EdgeInsets.zero,
                       title: DefaultText(
                         text: 'Sysytem Mode',
                         style: AppTextStyles.body14(context),
                       ),
-                      size: 25,
+                      size: Spacing.xLarge25,
                       activeBorderColor: Colors.green,
                       focusColor: Colors.green,
                       value: AdaptiveThemeMode.system,
@@ -80,7 +84,7 @@ class PreferncesScreen extends StatelessWidget {
                       onChanged: (mode) => provider.changeTheme(context, mode),
                       inactiveIcon: null,
                     ),
-                    const Gap(15),
+                    const Gap(Spacing.medium15),
                   ],
                 ),
               ),

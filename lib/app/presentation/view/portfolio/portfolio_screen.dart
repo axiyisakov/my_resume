@@ -8,6 +8,7 @@ import 'package:my_resume/app/presentation/animation/animation.dart';
 import 'package:my_resume/app/presentation/provider/provider.dart';
 import 'package:my_resume/app/presentation/widget/default_text.dart';
 import 'package:my_resume/core/theme/colors.dart';
+import 'package:my_resume/core/theme/spacing.dart';
 import 'package:my_resume/core/theme/text_styles.dart';
 import 'package:provider/provider.dart';
 
@@ -51,7 +52,7 @@ class PortfolioBody extends StatelessWidget {
 
         return GFCard(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(Spacing.ten),
           ),
           boxFit: BoxFit.cover,
           image: Image.asset(
@@ -71,12 +72,12 @@ class PortfolioBody extends StatelessWidget {
                 ? const GFBadge(
                     color: AppColors.accentGreen,
                     shape: GFBadgeShape.circle,
-                    size: 20,
+                    size: Spacing.twenty,
                   )
                 : const GFBadge(
                     color: AppColors.accentBlue,
                     shape: GFBadgeShape.circle,
-                    size: 20,
+                    size: Spacing.twenty,
                   ),
           ),
           content: DefaultText(

@@ -12,6 +12,7 @@ import 'package:my_resume/app/presentation/widget/subitem_wrap_widget.dart';
 import 'package:my_resume/app/presentation/widget/subitems_widget.dart';
 import 'package:my_resume/core/extension/extension.dart';
 import 'package:my_resume/core/theme/colors.dart';
+import 'package:my_resume/core/theme/spacing.dart';
 import 'package:my_resume/core/theme/text_styles.dart';
 import 'package:my_resume/gen/assets.gen.dart';
 import 'package:provider/provider.dart';
@@ -52,19 +53,19 @@ class ResumeBody extends StatelessWidget {
       ),
       slivers: [
         Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(Spacing.ten),
           child: Card(
             child: GFListTile(
               avatar: Card(
                 elevation: 5,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(Spacing.ten),
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(Spacing.ten),
                   child: Assets.image.avatar.image(
-                    width: 150,
-                    height: 150,
+                    width: Spacing.medium15 * Spacing.ten,
+                    height: Spacing.medium15 * Spacing.ten,
                     frameBuilder:
                         (context, child, frame, wasSynchronouslyLoaded) =>
                             child,
@@ -97,12 +98,12 @@ class ResumeBody extends StatelessWidget {
         //! Contact
 
         Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(Spacing.ten),
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Gap(15),
+                const Gap(Spacing.medium15),
                 for (var item in cv.contact)
                   AppTile(
                     subitem: item,
@@ -111,7 +112,7 @@ class ResumeBody extends StatelessWidget {
                       year: item.year,
                     ),
                   ),
-                const Gap(15),
+                const Gap(Spacing.medium15),
               ],
             ),
           ).textAnimation(),
@@ -130,13 +131,13 @@ class ResumeBody extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(Spacing.ten),
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //! Education
-                const Gap(15),
+                const Gap(Spacing.medium15),
 
                 for (var item in cv.education)
                   AppTile(
@@ -146,7 +147,7 @@ class ResumeBody extends StatelessWidget {
                       year: item.year,
                     ),
                   ),
-                const Gap(15),
+                const Gap(Spacing.medium15),
               ],
             ),
           ).textAnimation(),
@@ -165,12 +166,12 @@ class ResumeBody extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(Spacing.ten),
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Gap(15),
+                const Gap(Spacing.medium15),
                 for (var item in cv.certificates)
                   AppTile(
                     subitem: item,
@@ -179,7 +180,7 @@ class ResumeBody extends StatelessWidget {
                       year: item.year,
                     ),
                   ),
-                const Gap(15),
+                const Gap(Spacing.medium15),
               ],
             ),
           ).textAnimation(),
@@ -198,13 +199,13 @@ class ResumeBody extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(Spacing.ten),
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //! Certifications
-                const Gap(15),
+                const Gap(Spacing.medium15),
 
                 for (var item in cv.skills)
                   AppTile(
@@ -213,7 +214,7 @@ class ResumeBody extends StatelessWidget {
                       values: item.values,
                     ),
                   ),
-                const Gap(15),
+                const Gap(Spacing.medium15),
               ],
             ),
           ).textAnimation(),
@@ -232,13 +233,13 @@ class ResumeBody extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(Spacing.ten),
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //! Professional Summary
-                const Gap(15),
+                const Gap(Spacing.medium15),
 
                 for (var item in cv.professionalSummary)
                   AppTile(
@@ -248,7 +249,7 @@ class ResumeBody extends StatelessWidget {
                       year: item.year,
                     ),
                   ),
-                const Gap(15),
+                const Gap(Spacing.medium15),
               ],
             ),
           ).textAnimation(),
@@ -267,13 +268,13 @@ class ResumeBody extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(Spacing.ten),
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //! Working History
-                const Gap(15),
+                const Gap(Spacing.medium15),
 
                 for (var item in cv.workingExperience)
                   AppTile(
@@ -283,7 +284,7 @@ class ResumeBody extends StatelessWidget {
                       year: item.year,
                     ),
                   ),
-                const Gap(15),
+                const Gap(Spacing.medium15),
               ],
             ),
           ).textAnimation(),
