@@ -5,10 +5,12 @@ import 'package:getwidget/getwidget.dart';
 import 'package:my_resume/app/data/models/cv_model.dart';
 import 'package:my_resume/app/presentation/animation/animation.dart';
 import 'package:my_resume/app/presentation/provider/provider.dart';
+import 'package:my_resume/app/presentation/widget/app_sliver_persistance_header.dart';
 import 'package:my_resume/app/presentation/widget/app_tile.dart';
 import 'package:my_resume/app/presentation/widget/default_text.dart';
 import 'package:my_resume/app/presentation/widget/subitem_wrap_widget.dart';
 import 'package:my_resume/app/presentation/widget/subitems_widget.dart';
+import 'package:my_resume/core/extension/extension.dart';
 import 'package:my_resume/core/theme/colors.dart';
 import 'package:my_resume/core/theme/text_styles.dart';
 import 'package:my_resume/gen/assets.gen.dart';
@@ -44,224 +46,231 @@ class ResumeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return CustomScrollView(
       physics: const BouncingScrollPhysics(
         parent: AlwaysScrollableScrollPhysics(),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Card(
-              child: GFListTile(
-                avatar: Card(
-                  elevation: 5,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Assets.image.avatar.image(
-                      width: 150,
-                      height: 150,
-                      frameBuilder:
-                          (context, child, frame, wasSynchronouslyLoaded) =>
-                              child,
-                    ),
-                  ),
-                ).flipCard(),
-                title: DefaultText(
-                  text: cv.name,
-                  style: AppTextStyles.title22(context),
+      slivers: [
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Card(
+            child: GFListTile(
+              avatar: Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                subTitle: DefaultText(
-                  text: cv.position,
-                  style: AppTextStyles.body14(context),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Assets.image.avatar.image(
+                    width: 150,
+                    height: 150,
+                    frameBuilder:
+                        (context, child, frame, wasSynchronouslyLoaded) =>
+                            child,
+                  ),
                 ),
+              ).flipCard(),
+              title: DefaultText(
+                text: cv.name,
+                style: AppTextStyles.title22(context),
+              ),
+              subTitle: DefaultText(
+                text: cv.position,
+                style: AppTextStyles.body14(context),
               ),
             ),
           ),
-
-          //! Contact
-
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Card(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Gap(15),
-                  DefaultText(
-                    text: 'Contact',
-                    style: AppTextStyles.headlineBold14(
-                      context,
-                      color: AppColors.accentBlue,
-                    ),
-                  ).headerTitleAnimation(),
-                  for (var item in cv.contact)
-                    AppTile(
-                      subitem: item,
-                      subTitle: SubItemsWidget(
-                        values: item.values,
-                        year: item.year,
-                      ),
-                    ),
-                  const Gap(15),
-                ],
+        ).toSliver(),
+        SliverPersistentHeader(
+          pinned: true,
+          floating: true,
+          delegate: AppSPH(
+            child: DefaultText(
+              text: 'Contact',
+              style: AppTextStyles.headlineBold14(
+                context,
+                color: AppColors.accentBlue,
               ),
-            ).textAnimation(),
+            ),
           ),
+        ),
+        //! Contact
 
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Card(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  //! Education
-                  const Gap(15),
-                  DefaultText(
-                    text: 'Education',
-                    style: AppTextStyles.headlineBold14(
-                      context,
-                      color: AppColors.accentBlue,
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Card(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Gap(15),
+                DefaultText(
+                  text: 'Contact',
+                  style: AppTextStyles.headlineBold14(
+                    context,
+                    color: AppColors.accentBlue,
+                  ),
+                ).withLinearGradient(context).headerTitleAnimation(),
+                for (var item in cv.contact)
+                  AppTile(
+                    subitem: item,
+                    subTitle: SubItemsWidget(
+                      values: item.values,
+                      year: item.year,
                     ),
-                  ).headerTitleAnimation(),
+                  ),
+                const Gap(15),
+              ],
+            ),
+          ).textAnimation(),
+        ).toSliver(),
 
-                  for (var item in cv.education)
-                    AppTile(
-                      subitem: item,
-                      subTitle: SubItemsWidget(
-                        values: item.values,
-                        year: item.year,
-                      ),
-                    ),
-                  const Gap(15),
-                ],
-              ),
-            ).textAnimation(),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Card(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  //! Certifications
-                  const Gap(15),
-                  DefaultText(
-                    text: 'Certifications',
-                    style: AppTextStyles.headlineBold14(
-                      context,
-                      color: AppColors.accentBlue,
-                    ),
-                  ).headerTitleAnimation(),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Card(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                //! Education
+                const Gap(15),
+                DefaultText(
+                  text: 'Education',
+                  style: AppTextStyles.headlineBold14(
+                    context,
+                    color: AppColors.accentBlue,
+                  ),
+                ).headerTitleAnimation(),
 
-                  for (var item in cv.certificates)
-                    AppTile(
-                      subitem: item,
-                      subTitle: SubItemsWidget(
-                        values: item.values,
-                        year: item.year,
-                      ),
+                for (var item in cv.education)
+                  AppTile(
+                    subitem: item,
+                    subTitle: SubItemsWidget(
+                      values: item.values,
+                      year: item.year,
                     ),
-                  const Gap(15),
-                ],
-              ),
-            ).textAnimation(),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Card(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  //! Certifications
-                  const Gap(15),
-                  DefaultText(
-                    text: 'Skills',
-                    style: AppTextStyles.headlineBold14(
-                      context,
-                      color: AppColors.accentBlue,
-                    ),
-                  ).headerTitleAnimation(),
+                  ),
+                const Gap(15),
+              ],
+            ),
+          ).textAnimation(),
+        ).toSliver(),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Card(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                //! Certifications
+                const Gap(15),
+                DefaultText(
+                  text: 'Certifications',
+                  style: AppTextStyles.headlineBold14(
+                    context,
+                    color: AppColors.accentBlue,
+                  ),
+                ).headerTitleAnimation(),
 
-                  for (var item in cv.skills)
-                    AppTile(
-                      subitem: item,
-                      subTitle: SubItemsWrapWidget(
-                        values: item.values,
-                      ),
+                for (var item in cv.certificates)
+                  AppTile(
+                    subitem: item,
+                    subTitle: SubItemsWidget(
+                      values: item.values,
+                      year: item.year,
                     ),
-                  const Gap(15),
-                ],
-              ),
-            ).textAnimation(),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Card(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  //! Professional Summary
-                  const Gap(15),
-                  DefaultText(
-                    text: 'Professional Summary',
-                    style: AppTextStyles.headlineBold14(
-                      context,
-                      color: AppColors.accentBlue,
-                    ),
-                  ).headerTitleAnimation(),
+                  ),
+                const Gap(15),
+              ],
+            ),
+          ).textAnimation(),
+        ).toSliver(),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Card(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                //! Certifications
+                const Gap(15),
+                DefaultText(
+                  text: 'Skills',
+                  style: AppTextStyles.headlineBold14(
+                    context,
+                    color: AppColors.accentBlue,
+                  ),
+                ).headerTitleAnimation(),
 
-                  for (var item in cv.professionalSummary)
-                    AppTile(
-                      subitem: item,
-                      subTitle: SubItemsWidget(
-                        values: item.values,
-                        year: item.year,
-                      ),
+                for (var item in cv.skills)
+                  AppTile(
+                    subitem: item,
+                    subTitle: SubItemsWrapWidget(
+                      values: item.values,
                     ),
-                  const Gap(15),
-                ],
-              ),
-            ).textAnimation(),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Card(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  //! Working History
-                  const Gap(15),
-                  DefaultText(
-                    text: 'Working History',
-                    style: AppTextStyles.headlineBold14(
-                      context,
-                      color: AppColors.accentBlue,
-                    ),
-                  ).headerTitleAnimation(),
+                  ),
+                const Gap(15),
+              ],
+            ),
+          ).textAnimation(),
+        ).toSliver(),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Card(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                //! Professional Summary
+                const Gap(15),
+                DefaultText(
+                  text: 'Professional Summary',
+                  style: AppTextStyles.headlineBold14(
+                    context,
+                    color: AppColors.accentBlue,
+                  ),
+                ).headerTitleAnimation(),
 
-                  for (var item in cv.workingExperience)
-                    AppTile(
-                      subitem: item,
-                      subTitle: SubItemsWidget(
-                        values: item.values,
-                        year: item.year,
-                      ),
+                for (var item in cv.professionalSummary)
+                  AppTile(
+                    subitem: item,
+                    subTitle: SubItemsWidget(
+                      values: item.values,
+                      year: item.year,
                     ),
-                  const Gap(15),
-                ],
-              ),
-            ).textAnimation(),
-          ),
-          const SizedBox.square(
-            dimension: 100,
-          ),
-        ],
-      ),
+                  ),
+                const Gap(15),
+              ],
+            ),
+          ).textAnimation(),
+        ).toSliver(),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Card(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                //! Working History
+                const Gap(15),
+                DefaultText(
+                  text: 'Working History',
+                  style: AppTextStyles.headlineBold14(
+                    context,
+                    color: AppColors.accentBlue,
+                  ),
+                ).headerTitleAnimation(),
+
+                for (var item in cv.workingExperience)
+                  AppTile(
+                    subitem: item,
+                    subTitle: SubItemsWidget(
+                      values: item.values,
+                      year: item.year,
+                    ),
+                  ),
+                const Gap(15),
+              ],
+            ),
+          ).textAnimation(),
+        ).toSliver(),
+        const Gap(kFloatingActionButtonMargin).toSliver(),
+      ],
     );
   }
 }

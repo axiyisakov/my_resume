@@ -33,9 +33,9 @@ dependencies:
   adaptive_theme: any
   flutter_animate: any
   pdf: any
-  open_filex: any
-  file_saver: ^0.2.9
-  path_provider: ^2.1.2
+  # open_filex: any
+  # file_saver: ^0.2.9
+  # path_provider: ^2.1.2
 
 
 dev_dependencies:
