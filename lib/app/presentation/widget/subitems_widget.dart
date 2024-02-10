@@ -18,25 +18,27 @@ class SubItemsWidget extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: values
-          .map((e) => GFListTile(
-                padding: EdgeInsets.zero,
-                margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-                avatar: const GFBadge(
-                  shape: GFBadgeShape.circle,
-                  size: 10,
-                  color: Colors.black,
-                ),
-                title: DefaultText(
-                  text: e,
-                  style: AppTextStyles.footNote12(context),
-                ),
-                subTitle: year != null
-                    ? DefaultText(
-                        text: year ?? '',
-                        style: AppTextStyles.footNote12(context),
-                      )
-                    : null,
-              ))
+          .map(
+            (e) => GFListTile(
+              padding: EdgeInsets.zero,
+              margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+              avatar: const GFBadge(
+                shape: GFBadgeShape.circle,
+                size: 10,
+                color: Colors.black,
+              ),
+              title: DefaultText(
+                text: e,
+                style: AppTextStyles.footNote12(context),
+              ),
+              subTitle: year != null
+                  ? DefaultText(
+                      text: year ?? '',
+                      style: AppTextStyles.footNote12(context),
+                    )
+                  : null,
+            ),
+          )
           .toList(),
     );
   }
