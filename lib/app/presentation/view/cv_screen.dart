@@ -18,7 +18,7 @@ class CVScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: DefaultText(
-          text: 'My CV',
+          text: 'CV',
           style: AppTextStyles.title22(
             context,
             color: AppColors.accentBlue,
