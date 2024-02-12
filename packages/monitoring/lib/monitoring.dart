@@ -10,8 +10,10 @@ export 'src/analytics_service.dart';
 export 'src/error_reporting_service.dart';
 export 'src/explicit_crash.dart';
 
-Future<void> initializeMonitoringPackage(
-        {required String name, required FirebaseOptions? options}) =>
+Future<void> initializeMonitoringPackage({
+  String? name,
+  FirebaseOptions? options,
+}) =>
     Firebase.initializeApp(
       name: name,
       options: options,
