@@ -12,8 +12,8 @@ import 'package:flutter/widgets.dart';
 class $AssetsImageGen {
   const $AssetsImageGen();
 
-  /// File path: assets/image/avatar.jpg
-  AssetGenImage get avatar => const AssetGenImage('assets/image/avatar.jpg');
+  /// File path: assets/image/avatar.png
+  AssetGenImage get avatar => const AssetGenImage('assets/image/avatar.png');
 
   $AssetsImagePortfolioGen get portfolio => const $AssetsImagePortfolioGen();
 
