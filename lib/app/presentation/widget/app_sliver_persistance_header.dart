@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_resume/core/extension/extension.dart';
 
 class AppSPH extends SliverPersistentHeaderDelegate {
   final Widget child;
@@ -6,6 +7,7 @@ class AppSPH extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
+    context.configureDisignSize();
     return SizedBox.expand(
       child: Card(
         margin: EdgeInsets.zero,

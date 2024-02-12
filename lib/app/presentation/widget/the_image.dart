@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:my_resume/app/presentation/widget/centred_circular_progress_indicator.dart';
+import 'package:my_resume/core/extension/extension.dart';
 
 class TheImage extends StatelessWidget {
   final String imageUrl;
@@ -13,6 +14,7 @@ class TheImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.configureDisignSize();
     return CachedNetworkImage(
       imageUrl: imageUrl,
       width: (143 / MediaQuery.sizeOf(context).width) * 100,

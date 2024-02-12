@@ -36,6 +36,8 @@ dependencies:
   url_launcher: ^6.2.4
   device_preview: ^1.1.0
   expandable_text: 2.3.0
+  flutter_screenutil: ^5.9.0
+  flutter_native_splash: ^2.3.8
   # open_filex: any
   # file_saver: ^0.2.9
   # path_provider: ^2.1.2

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:my_resume/app/data/models/cv_model.dart';
@@ -22,6 +23,7 @@ class ResumeScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.configureDisignSize();
     return Scaffold(body: Consumer<ResumeProvider>(
       builder: (context, provider, child) {
         if (provider.isLoading) {
@@ -47,6 +49,7 @@ class ResumeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.configureDisignSize();
     return CustomScrollView(
       physics: const BouncingScrollPhysics(
         parent: AlwaysScrollableScrollPhysics(),
@@ -59,13 +62,13 @@ class ResumeBody extends StatelessWidget {
               avatar: Card(
                 elevation: 5,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(Spacing.ten),
+                  borderRadius: BorderRadius.circular(Spacing.ten.r),
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(Spacing.ten),
+                  borderRadius: BorderRadius.circular(Spacing.ten.r),
                   child: Assets.image.avatar.image(
-                    width: Spacing.medium15 * Spacing.ten,
-                    height: Spacing.medium15 * Spacing.ten,
+                    width: Spacing.ten.w * Spacing.ten.w,
+                    height: Spacing.ten.w * Spacing.ten.w,
                     frameBuilder:
                         (context, child, frame, wasSynchronouslyLoaded) =>
                             child,
@@ -98,12 +101,12 @@ class ResumeBody extends StatelessWidget {
         //! Contact
 
         Padding(
-          padding: const EdgeInsets.all(Spacing.ten),
+          padding: const EdgeInsets.all(Spacing.ten).r,
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Gap(Spacing.medium15),
+                Gap(Spacing.medium15.h),
                 for (var item in cv.contact)
                   AppTile(
                     subitem: item,
@@ -112,7 +115,7 @@ class ResumeBody extends StatelessWidget {
                       year: item.year,
                     ),
                   ),
-                const Gap(Spacing.medium15),
+                Gap(Spacing.medium15.h),
               ],
             ),
           ).textAnimation(),
@@ -131,7 +134,7 @@ class ResumeBody extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(Spacing.ten),
+          padding: const EdgeInsets.all(Spacing.ten).r,
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -166,12 +169,12 @@ class ResumeBody extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(Spacing.ten),
+          padding: const EdgeInsets.all(Spacing.ten).r,
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Gap(Spacing.medium15),
+                Gap(Spacing.medium15.h),
                 for (var item in cv.certificates)
                   AppTile(
                     subitem: item,
@@ -180,7 +183,7 @@ class ResumeBody extends StatelessWidget {
                       year: item.year,
                     ),
                   ),
-                const Gap(Spacing.medium15),
+                Gap(Spacing.medium15.h),
               ],
             ),
           ).textAnimation(),
@@ -199,13 +202,13 @@ class ResumeBody extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(Spacing.ten),
+          padding: const EdgeInsets.all(Spacing.ten).r,
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //! Certifications
-                const Gap(Spacing.medium15),
+                Gap(Spacing.medium15.h),
 
                 for (var item in cv.skills)
                   AppTile(
@@ -214,7 +217,7 @@ class ResumeBody extends StatelessWidget {
                       values: item.values,
                     ),
                   ),
-                const Gap(Spacing.medium15),
+                Gap(Spacing.medium15.h),
               ],
             ),
           ).textAnimation(),
@@ -233,13 +236,13 @@ class ResumeBody extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(Spacing.ten),
+          padding: const EdgeInsets.all(Spacing.ten).r,
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //! Professional Summary
-                const Gap(Spacing.medium15),
+                Gap(Spacing.medium15.h),
 
                 for (var item in cv.professionalSummary)
                   AppTile(
@@ -249,7 +252,7 @@ class ResumeBody extends StatelessWidget {
                       year: item.year,
                     ),
                   ),
-                const Gap(Spacing.medium15),
+                Gap(Spacing.medium15.h),
               ],
             ),
           ).textAnimation(),
@@ -268,13 +271,13 @@ class ResumeBody extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(Spacing.ten),
+          padding: const EdgeInsets.all(Spacing.ten).r,
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //! Working History
-                const Gap(Spacing.medium15),
+                Gap(Spacing.medium15.h),
 
                 for (var item in cv.workingExperience)
                   AppTile(
@@ -284,7 +287,7 @@ class ResumeBody extends StatelessWidget {
                       year: item.year,
                     ),
                   ),
-                const Gap(Spacing.medium15),
+                Gap(Spacing.medium15.h),
               ],
             ),
           ).textAnimation(),

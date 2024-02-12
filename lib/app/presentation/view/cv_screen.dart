@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_resume/app/presentation/animation/animation.dart';
 import 'package:my_resume/app/presentation/provider/cv_provider.dart';
 import 'package:my_resume/app/presentation/widget/default_text.dart';
+import 'package:my_resume/core/extension/extension.dart';
 import 'package:my_resume/core/pages.dart';
 import 'package:my_resume/core/theme/colors.dart';
 import 'package:my_resume/core/theme/text_styles.dart';
@@ -13,6 +14,7 @@ class CVScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.configureDisignSize();
     return Scaffold(
       appBar: AppBar(
         title: DefaultText(

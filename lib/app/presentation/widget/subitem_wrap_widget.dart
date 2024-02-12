@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:my_resume/app/presentation/widget/default_text.dart';
+import 'package:my_resume/core/extension/extension.dart';
 import 'package:my_resume/core/theme/text_styles.dart';
 
 class SubItemsWrapWidget extends StatelessWidget {
@@ -14,6 +15,7 @@ class SubItemsWrapWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.configureDisignSize();
     return Wrap(
       children: values
           .map(

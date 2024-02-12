@@ -1,10 +1,12 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:getwidget/components/radio_list_tile/gf_radio_list_tile.dart';
 import 'package:my_resume/app/presentation/animation/animation.dart';
 import 'package:my_resume/app/presentation/provider/cv_provider.dart';
 import 'package:my_resume/app/presentation/widget/default_text.dart';
+import 'package:my_resume/core/extension/extension.dart';
 import 'package:my_resume/core/theme/colors.dart';
 import 'package:my_resume/core/theme/spacing.dart';
 import 'package:my_resume/core/theme/text_styles.dart';
@@ -15,18 +17,19 @@ class PreferncesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.configureDisignSize();
     return Scaffold(
       body:
           SafeArea(child: Consumer<CVProvider>(builder: (context, provider, _) {
         return Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(Spacing.ten),
+              padding: const EdgeInsets.all(Spacing.ten).r,
               child: Card(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Gap(Spacing.medium15),
+                    Gap(Spacing.medium15.h),
                     DefaultText(
                       text: 'Theme',
                       style: AppTextStyles.headlineBold14(
@@ -39,9 +42,10 @@ class PreferncesScreen extends StatelessWidget {
                         text: 'Dark Mode',
                         style: AppTextStyles.body14(context),
                       ),
-                      size: Spacing.xLarge25,
+                      size: Spacing.xLarge25.r,
                       padding: const EdgeInsets.symmetric(
-                          horizontal: Spacing.medium15),
+                        horizontal: Spacing.medium15,
+                      ).r,
                       margin: EdgeInsets.zero,
                       activeBorderColor: Colors.green,
                       focusColor: Colors.green,
@@ -50,16 +54,17 @@ class PreferncesScreen extends StatelessWidget {
                       onChanged: (mode) => provider.changeTheme(context, mode),
                       inactiveIcon: null,
                     ),
-                    const Gap(Spacing.medium15),
+                    Gap(Spacing.medium15.h),
                     GFRadioListTile(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: Spacing.medium15),
+                              horizontal: Spacing.medium15)
+                          .r,
                       margin: EdgeInsets.zero,
                       title: DefaultText(
                         text: 'Light Mode',
                         style: AppTextStyles.body14(context),
                       ),
-                      size: Spacing.xLarge25,
+                      size: Spacing.xLarge25.r,
                       activeBorderColor: Colors.green,
                       focusColor: Colors.green,
                       value: AdaptiveThemeMode.light,
@@ -67,16 +72,17 @@ class PreferncesScreen extends StatelessWidget {
                       onChanged: (mode) => provider.changeTheme(context, mode),
                       inactiveIcon: null,
                     ),
-                    const Gap(Spacing.medium15),
+                    Gap(Spacing.medium15.h),
                     GFRadioListTile(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: Spacing.medium15),
+                              horizontal: Spacing.medium15)
+                          .r,
                       margin: EdgeInsets.zero,
                       title: DefaultText(
                         text: 'Sysytem Mode',
                         style: AppTextStyles.body14(context),
                       ),
-                      size: Spacing.xLarge25,
+                      size: Spacing.xLarge25.r,
                       activeBorderColor: Colors.green,
                       focusColor: Colors.green,
                       value: AdaptiveThemeMode.system,
@@ -84,7 +90,7 @@ class PreferncesScreen extends StatelessWidget {
                       onChanged: (mode) => provider.changeTheme(context, mode),
                       inactiveIcon: null,
                     ),
-                    const Gap(Spacing.medium15),
+                    Gap(Spacing.medium15.h),
                   ],
                 ),
               ),

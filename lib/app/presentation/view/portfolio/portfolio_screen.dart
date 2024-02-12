@@ -8,6 +8,7 @@ import 'package:my_resume/app/presentation/animation/animation.dart';
 import 'package:my_resume/app/presentation/provider/provider.dart';
 import 'package:my_resume/app/presentation/widget/default_text.dart';
 import 'package:my_resume/app/presentation/widget/expandable_text.dart';
+import 'package:my_resume/core/extension/extension.dart';
 import 'package:my_resume/core/theme/colors.dart';
 import 'package:my_resume/core/theme/spacing.dart';
 import 'package:my_resume/core/theme/text_styles.dart';
@@ -18,6 +19,7 @@ class PortfolioScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.configureDisignSize();
     return Scaffold(
       body: Consumer<PortfolioProvider>(
         builder: (context, provider, child) {

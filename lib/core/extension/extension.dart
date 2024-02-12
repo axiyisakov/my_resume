@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_resume/core/theme/spacing.dart';
 
 extension ThemeChanger on BuildContext {
   void changeTheme(AdaptiveThemeMode mode) {
@@ -51,5 +53,15 @@ extension BlurToWidget on Widget {
     return SliverToBoxAdapter(
       child: this,
     );
+  }
+}
+
+extension AppSize on BuildContext {
+  void initScreenSize() {
+    ScreenUtil.init(this, designSize: Spacing.designSize, minTextAdapt: true);
+  }
+
+  void configureDisignSize() {
+    ScreenUtil.configure(designSize: Spacing.designSize, minTextAdapt: true);
   }
 }
