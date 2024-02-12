@@ -1,4 +1,3 @@
-import 'readData.welltested_test.mocks.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -6,6 +5,10 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:my_resume/core/exception/failures.dart';
 import 'package:my_resume/core/local/local_data_reader.dart';
+
+import 'readData.welltested_test.mocks.dart';
+
+import 'readDataSecondWay.welltested_test.dart';
 
 @GenerateMocks([AssetBundle])
 void main() {

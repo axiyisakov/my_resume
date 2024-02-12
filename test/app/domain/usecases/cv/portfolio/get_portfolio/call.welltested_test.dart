@@ -1,4 +1,3 @@
-import 'call.welltested_test.mocks.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -8,6 +7,8 @@ import 'package:my_resume/app/domain/repositories/cv_repository.dart';
 import 'package:my_resume/app/domain/usecases/cv/portfolio/get_portfolio.dart';
 import 'package:my_resume/core/exception/failures.dart';
 
+import '../../resume/get_resume/call.welltested_test.mocks.dart';
+import 'call.welltested_test.mocks.dart';
 import 'get_portfolio_test.mocks.dart';
 
 @GenerateMocks([CVRepository])

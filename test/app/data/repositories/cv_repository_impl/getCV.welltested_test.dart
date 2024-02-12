@@ -1,4 +1,3 @@
-import 'getCV.welltested_test.mocks.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -8,6 +7,8 @@ import 'package:my_resume/app/data/models/cv_model.dart';
 import 'package:my_resume/app/data/repositories/cv_repository_impl.dart';
 import 'package:my_resume/core/exception/failures.dart';
 import 'package:my_resume/core/exception/exceptions.dart';
+
+import 'getCV.welltested_test.mocks.dart';
 
 @GenerateMocks([LocalDataSource, CVModel])
 void main() {
