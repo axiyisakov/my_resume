@@ -13,7 +13,7 @@ extension AppAnimations on Widget {
       curve: Curves.easeInOut,
       direction: Axis.horizontal,
       alignment: Alignment.center,
-      end: 1,
+      end: 2,
       begin: 0.0,
     );
   }

@@ -12,28 +12,30 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  flutter_gen: any
-  provider: any
+  flutter_gen: 5.4.0
+  provider: 6.1.1
   flutter_hooks: ^0.20.5
-  dartz: any
-  injectable: any
-  get_it: any
-  permission_handler: any
-  intl: any
-  equatable: any
-  freezed_annotation: any
+  dartz: 0.10.1
+  injectable: 2.3.2
+  get_it: 7.6.7
+  permission_handler: 11.2.1
+  intl: ^0.18.1
+  equatable: 2.0.5
+  freezed_annotation: 2.4.1
   json_annotation: ^4.8.1
-  cached_network_image: any
-  auto_size_text: any
-  google_fonts: any
-  getwidget: any
-  welltested_annotation: any
+  cached_network_image: 3.3.1
+  auto_size_text: 3.0.0
+  google_fonts: 6.1.0
+  getwidget: 4.0.0
+  welltested_annotation: 1.1.0
   gap: ^3.0.1
   badges: ^3.1.2
-  adaptive_theme: any
-  flutter_animate: any
-  pdf: any
+  adaptive_theme: 3.6.0
+  flutter_animate: 4.5.0
+  pdf: 3.10.7
   url_launcher: ^6.2.4
+  device_preview: ^1.1.0
+  expandable_text: 2.3.0
   # open_filex: any
   # file_saver: ^0.2.9
   # path_provider: ^2.1.2
@@ -44,12 +46,12 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^2.0.0
-  flutter_gen_runner: any
+  flutter_gen_runner: 5.4.0
   build_runner: ^2.4.8
-  injectable_generator: any
-  json_serializable: any
-  freezed: any
-  mockito: any
+  injectable_generator: 2.4.1
+  json_serializable: 6.7.1
+  freezed: 2.4.7
+  mockito: 5.4.4
   
 
 flutter:

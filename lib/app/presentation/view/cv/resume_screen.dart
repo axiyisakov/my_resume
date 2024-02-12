@@ -290,7 +290,7 @@ class ResumeBody extends StatelessWidget {
           ).textAnimation(),
         ).toSliver(),
         const Gap(
-          kFloatingActionButtonMargin,
+          kToolbarHeight,
         ).toSliver(),
       ],
     );

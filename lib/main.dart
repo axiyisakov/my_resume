@@ -1,4 +1,6 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:my_resume/app/presentation/view/cv_view.dart';
 import 'package:my_resume/core/di/locator.dart' as di;
@@ -7,7 +9,10 @@ import 'package:my_resume/core/theme/app_theme_data.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   di.configureDependencies();
-  runApp(const MyApp());
+  runApp(DevicePreview(
+    enabled: !kReleaseMode,
+    builder: (context) => const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -24,6 +29,8 @@ class MyApp extends StatelessWidget {
           title: 'Flutter Demo',
           theme: light,
           darkTheme: dark,
+          locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
           home: const CVView(),
         );
       },

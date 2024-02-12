@@ -15,7 +15,7 @@ class TheImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CachedNetworkImage(
       imageUrl: imageUrl,
-      width: 143,
+      width: (143 / MediaQuery.sizeOf(context).width) * 100,
       height: 212,
       imageBuilder: (context, imageProvider) => Card(
         elevation: 10,

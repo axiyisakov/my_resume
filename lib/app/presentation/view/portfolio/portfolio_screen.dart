@@ -7,6 +7,7 @@ import 'package:my_resume/app/data/models/portfolio_item_status_enum.dart';
 import 'package:my_resume/app/presentation/animation/animation.dart';
 import 'package:my_resume/app/presentation/provider/provider.dart';
 import 'package:my_resume/app/presentation/widget/default_text.dart';
+import 'package:my_resume/app/presentation/widget/expandable_text.dart';
 import 'package:my_resume/core/theme/colors.dart';
 import 'package:my_resume/core/theme/spacing.dart';
 import 'package:my_resume/core/theme/text_styles.dart';
@@ -80,7 +81,7 @@ class PortfolioBody extends StatelessWidget {
                     size: Spacing.twenty,
                   ),
           ),
-          content: DefaultText(
+          content: AppExpandableText(
             text: project.description,
             style: AppTextStyles.body14(
               context,
