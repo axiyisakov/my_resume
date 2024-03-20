@@ -3,7 +3,6 @@ import 'dart:isolate';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:monitoring/monitoring.dart';
@@ -33,10 +32,12 @@ Future<void> main() async {
           );
         }).sendPort,
       );
-      runApp(DevicePreview(
-        enabled: !kReleaseMode,
-        builder: (context) => const MyApp(),
-      ));
+      runApp(
+        DevicePreview(
+          enabled: false,
+          builder: (context) => const MyApp(),
+        ),
+      );
     },
     (error, stack) => errorReportingService.recordError(
       error,
