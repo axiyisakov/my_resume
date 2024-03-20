@@ -1,24 +1,23 @@
 {
-    "name":"Akhmadjon Isakov",
+    "name":"Axiy Isakov",
     "image_path":"https://avatars.githubusercontent.com/u/77500000?v=4",
     "position":"Flutter Developer",
     "contact":[
         {
             "name":"Email",
             "values":[
-                "axiyisakov@gmail.com"
+                "axiy456@gmail.com"
             ]
         },
         {
             "name":"Phone",
             "values":[
-                "+998 99 830 72 18"
+                "+998 99 830 72 10"
             ]
         },
         {
             "name":"Address",
             "values":[
-                "Fergana",
                 "Tashkent",
                 "Uzbekistan"
             ]
@@ -26,7 +25,7 @@
         {
             "name":"Telegram",
             "values":[
-                "@axiydev"
+                "@axiytelegram"
             ]
         }
     
@@ -122,7 +121,7 @@
 
     "working_experience":[
         {
-            "name":"IT-Med",
+            "name":"IT-Planet",
             "year":"2020-2021",
             "values":[
                 "Flutter Developer"
@@ -137,7 +136,7 @@
             ]
         },
         {
-            "name":"Uzbekneftgaz AJ",
+            "name":"Other AJ",
             "year":"2022-2023",
             "values":[
                 "Flutter Developer",
