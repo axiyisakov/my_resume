@@ -8,17 +8,17 @@ part 'cv_model.g.dart';
 
 @Freezed()
 class CVModel with _$CVModel {
+  // ignore: invalid_annotation_target
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory CVModel({
     required String name,
     required String position,
-    @JsonKey(name: 'image_path') required String imagePath,
+    required String imagePath,
     required List<CVSubitem> contact,
     required List<CVSubitem> education,
     required List<CVSubitem> certificates,
     required List<CVSubitem> skills,
-    @JsonKey(name: 'working_experience')
     required List<CVSubitem> workingExperience,
-    @JsonKey(name: 'professional_summary')
     required List<CVSubitem> professionalSummary,
   }) = _CVModel;
 

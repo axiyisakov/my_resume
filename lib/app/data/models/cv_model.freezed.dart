@@ -22,15 +22,12 @@ CVModel _$CVModelFromJson(Map<String, dynamic> json) {
 mixin _$CVModel {
   String get name => throw _privateConstructorUsedError;
   String get position => throw _privateConstructorUsedError;
-  @JsonKey(name: 'image_path')
   String get imagePath => throw _privateConstructorUsedError;
   List<CVSubitem> get contact => throw _privateConstructorUsedError;
   List<CVSubitem> get education => throw _privateConstructorUsedError;
   List<CVSubitem> get certificates => throw _privateConstructorUsedError;
   List<CVSubitem> get skills => throw _privateConstructorUsedError;
-  @JsonKey(name: 'working_experience')
   List<CVSubitem> get workingExperience => throw _privateConstructorUsedError;
-  @JsonKey(name: 'professional_summary')
   List<CVSubitem> get professionalSummary => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,13 +43,12 @@ abstract class $CVModelCopyWith<$Res> {
   $Res call(
       {String name,
       String position,
-      @JsonKey(name: 'image_path') String imagePath,
+      String imagePath,
       List<CVSubitem> contact,
       List<CVSubitem> education,
       List<CVSubitem> certificates,
       List<CVSubitem> skills,
-      @JsonKey(name: 'working_experience') List<CVSubitem> workingExperience,
-      @JsonKey(name: 'professional_summary')
+      List<CVSubitem> workingExperience,
       List<CVSubitem> professionalSummary});
 }
 
@@ -130,13 +126,12 @@ abstract class _$$CVModelImplCopyWith<$Res> implements $CVModelCopyWith<$Res> {
   $Res call(
       {String name,
       String position,
-      @JsonKey(name: 'image_path') String imagePath,
+      String imagePath,
       List<CVSubitem> contact,
       List<CVSubitem> education,
       List<CVSubitem> certificates,
       List<CVSubitem> skills,
-      @JsonKey(name: 'working_experience') List<CVSubitem> workingExperience,
-      @JsonKey(name: 'professional_summary')
+      List<CVSubitem> workingExperience,
       List<CVSubitem> professionalSummary});
 }
 
@@ -203,19 +198,18 @@ class __$$CVModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$CVModelImpl implements _CVModel {
   const _$CVModelImpl(
       {required this.name,
       required this.position,
-      @JsonKey(name: 'image_path') required this.imagePath,
+      required this.imagePath,
       required final List<CVSubitem> contact,
       required final List<CVSubitem> education,
       required final List<CVSubitem> certificates,
       required final List<CVSubitem> skills,
-      @JsonKey(name: 'working_experience')
       required final List<CVSubitem> workingExperience,
-      @JsonKey(name: 'professional_summary')
       required final List<CVSubitem> professionalSummary})
       : _contact = contact,
         _education = education,
@@ -232,7 +226,6 @@ class _$CVModelImpl implements _CVModel {
   @override
   final String position;
   @override
-  @JsonKey(name: 'image_path')
   final String imagePath;
   final List<CVSubitem> _contact;
   @override
@@ -268,7 +261,6 @@ class _$CVModelImpl implements _CVModel {
 
   final List<CVSubitem> _workingExperience;
   @override
-  @JsonKey(name: 'working_experience')
   List<CVSubitem> get workingExperience {
     if (_workingExperience is EqualUnmodifiableListView)
       return _workingExperience;
@@ -278,7 +270,6 @@ class _$CVModelImpl implements _CVModel {
 
   final List<CVSubitem> _professionalSummary;
   @override
-  @JsonKey(name: 'professional_summary')
   List<CVSubitem> get professionalSummary {
     if (_professionalSummary is EqualUnmodifiableListView)
       return _professionalSummary;
@@ -345,14 +336,12 @@ abstract class _CVModel implements CVModel {
   const factory _CVModel(
       {required final String name,
       required final String position,
-      @JsonKey(name: 'image_path') required final String imagePath,
+      required final String imagePath,
       required final List<CVSubitem> contact,
       required final List<CVSubitem> education,
       required final List<CVSubitem> certificates,
       required final List<CVSubitem> skills,
-      @JsonKey(name: 'working_experience')
       required final List<CVSubitem> workingExperience,
-      @JsonKey(name: 'professional_summary')
       required final List<CVSubitem> professionalSummary}) = _$CVModelImpl;
 
   factory _CVModel.fromJson(Map<String, dynamic> json) = _$CVModelImpl.fromJson;
@@ -362,7 +351,6 @@ abstract class _CVModel implements CVModel {
   @override
   String get position;
   @override
-  @JsonKey(name: 'image_path')
   String get imagePath;
   @override
   List<CVSubitem> get contact;
@@ -373,10 +361,8 @@ abstract class _CVModel implements CVModel {
   @override
   List<CVSubitem> get skills;
   @override
-  @JsonKey(name: 'working_experience')
   List<CVSubitem> get workingExperience;
   @override
-  @JsonKey(name: 'professional_summary')
   List<CVSubitem> get professionalSummary;
   @override
   @JsonKey(ignore: true)
