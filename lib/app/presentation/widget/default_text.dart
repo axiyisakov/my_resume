@@ -13,7 +13,7 @@ class DefaultText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.configureDisignSize();
+    context.configureDesignSize();
     return AutoSizeText(
       text,
       style: style,

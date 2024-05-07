@@ -17,7 +17,7 @@ class PreferncesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.configureDisignSize();
+    context.configureDesignSize();
     return Scaffold(
       body:
           SafeArea(child: Consumer<CVProvider>(builder: (context, provider, _) {

@@ -6,7 +6,7 @@ class CenteredCircularProggressIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.configureDisignSize();
+    context.configureDesignSize();
     return const Center(
       child: CircularProgressIndicator.adaptive(),
     );

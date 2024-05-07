@@ -15,7 +15,7 @@ class SubItemsWrapWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.configureDisignSize();
+    context.configureDesignSize();
     return Wrap(
       children: values
           .map(

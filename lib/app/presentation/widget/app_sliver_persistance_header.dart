@@ -7,7 +7,7 @@ class AppSPH extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    context.configureDisignSize();
+    context.configureDesignSize();
     return SizedBox.expand(
       child: Card(
         margin: EdgeInsets.zero,

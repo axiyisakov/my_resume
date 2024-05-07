@@ -14,7 +14,7 @@ class AppExpandableText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.configureDisignSize();
+    context.configureDesignSize();
     return ExpandableText(
       text,
       expandText: 'show more',

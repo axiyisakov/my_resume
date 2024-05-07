@@ -61,7 +61,7 @@ extension AppSize on BuildContext {
     ScreenUtil.init(this, designSize: Spacing.designSize, minTextAdapt: true);
   }
 
-  void configureDisignSize() {
+  void configureDesignSize() {
     ScreenUtil.configure(designSize: Spacing.designSize, minTextAdapt: true);
   }
 }

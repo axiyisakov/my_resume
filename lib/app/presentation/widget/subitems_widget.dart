@@ -16,7 +16,7 @@ class SubItemsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.configureDisignSize();
+    context.configureDesignSize();
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: values

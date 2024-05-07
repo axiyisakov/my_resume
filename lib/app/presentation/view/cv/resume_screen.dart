@@ -23,7 +23,7 @@ class ResumeScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.configureDisignSize();
+    context.configureDesignSize();
     return Scaffold(body: Consumer<ResumeProvider>(
       builder: (context, provider, child) {
         if (provider.isLoading) {
@@ -49,7 +49,7 @@ class ResumeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.configureDisignSize();
+    context.configureDesignSize();
     return CustomScrollView(
       physics: const BouncingScrollPhysics(
         parent: AlwaysScrollableScrollPhysics(),

@@ -14,7 +14,7 @@ class TheImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.configureDisignSize();
+    context.configureDesignSize();
     return CachedNetworkImage(
       imageUrl: imageUrl,
       width: (143 / MediaQuery.sizeOf(context).width) * 100,

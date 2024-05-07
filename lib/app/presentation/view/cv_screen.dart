@@ -14,7 +14,7 @@ class CVScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.configureDisignSize();
+    context.configureDesignSize();
     return Scaffold(
       appBar: AppBar(
         title: DefaultText(

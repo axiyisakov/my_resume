@@ -19,7 +19,7 @@ class PortfolioScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.configureDisignSize();
+    context.configureDesignSize();
     return Scaffold(
       body: Consumer<PortfolioProvider>(
         builder: (context, provider, child) {

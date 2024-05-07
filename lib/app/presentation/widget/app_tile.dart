@@ -17,7 +17,7 @@ class AppTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.configureDisignSize();
+    context.configureDesignSize();
     return GFListTile(
       padding: EdgeInsets.zero,
       margin: const EdgeInsets.symmetric(
