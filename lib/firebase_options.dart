@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCGC6809nUP7OU0YqWH8J259PEKs8-UouU',
-    appId: '1:340192368392:android:592fe6f9685383f5427ebd',
+    appId: '1:340192368392:android:9ad0b245393e32fe427ebd',
     messagingSenderId: '340192368392',
     projectId: 'mycv-3bce2',
     storageBucket: 'mycv-3bce2.appspot.com',
@@ -63,11 +63,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAaDWcym9vH9k3GFVLno51wOMTPgm3lCSM',
-    appId: '1:340192368392:ios:2c9754ffca8f65b4427ebd',
+    appId: '1:340192368392:ios:c4999a4ed70253dc427ebd',
     messagingSenderId: '340192368392',
     projectId: 'mycv-3bce2',
     storageBucket: 'mycv-3bce2.appspot.com',
-    iosBundleId: 'com.waqarali.myresume',
+    iosBundleId: 'com.axiy.myresume',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
