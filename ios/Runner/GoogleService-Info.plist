@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.axiy.myresume</string>
+	<string>com.axiydev.myresume</string>
 	<key>PROJECT_ID</key>
 	<string>mycv-3bce2</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:340192368392:ios:c4999a4ed70253dc427ebd</string>
+	<string>1:340192368392:ios:a024c8d8b215620d427ebd</string>
 </dict>
 </plist>
