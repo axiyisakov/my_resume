@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:340192368392:android:1e4c392cf5e5b52d427ebd",
+        "android_client_info": {
+          "package_name": "com.axiy.mycv"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGC6809nUP7OU0YqWH8J259PEKs8-UouU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:340192368392:android:9ad0b245393e32fe427ebd",
         "android_client_info": {
           "package_name": "com.axiy.myresume"
